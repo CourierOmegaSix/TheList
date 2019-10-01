@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.switchWinForm = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // switchWinForm
+            // label1
             // 
-            this.switchWinForm.Location = new System.Drawing.Point(133, 287);
-            this.switchWinForm.Name = "switchWinForm";
-            this.switchWinForm.Size = new System.Drawing.Size(385, 142);
-            this.switchWinForm.TabIndex = 0;
-            this.switchWinForm.Text = "Switch to winform2";
-            this.switchWinForm.UseVisualStyleBackColor = true;
-            this.switchWinForm.Click += new System.EventHandler(this.switchWinForm_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 100F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-2, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(685, 153);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "WinForm2";
             // 
-            // Form1
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(46, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(589, 267);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Back to Form1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 550);
-            this.Controls.Add(this.switchWinForm);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Location = new System.Drawing.Point(100, 100);
-            this.Name = "Form1";
+            this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Form1";
+            this.Text = "Form2";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button switchWinForm;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
-
