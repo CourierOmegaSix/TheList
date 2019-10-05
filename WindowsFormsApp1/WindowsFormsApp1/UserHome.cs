@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class userInfo : Form
+    public partial class UserHome : Form
     {
-        public userInfo()
+        public UserHome()
         {
             InitializeComponent();
         }
 
-        private void switchWinForm_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
+            userInfo f1 = new userInfo();
+            f1.ShowDialog();
             this.Close();
         }
     }

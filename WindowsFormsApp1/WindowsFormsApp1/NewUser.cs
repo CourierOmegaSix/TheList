@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class NewUser : Form
     {
-        public Form2()
+        public NewUser()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            userInfo f1 = new userInfo();
-            f1.ShowDialog();
-            this.Close();
         }
     }
 }

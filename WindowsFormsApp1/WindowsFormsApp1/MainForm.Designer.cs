@@ -30,59 +30,83 @@
         {
             this.signInButton = new System.Windows.Forms.Button();
             this.joinButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.usrName = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
             this.infoGroup = new System.Windows.Forms.GroupBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.infoGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // signInButton
             // 
-            this.signInButton.Location = new System.Drawing.Point(16, 144);
+            this.signInButton.Location = new System.Drawing.Point(32, 144);
             this.signInButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signInButton.Name = "signInButton";
             this.signInButton.Size = new System.Drawing.Size(72, 32);
             this.signInButton.TabIndex = 0;
             this.signInButton.Text = "Sign In";
             this.signInButton.UseVisualStyleBackColor = true;
-            this.signInButton.Click += new System.EventHandler(this.switchWinForm_Click);
+            this.signInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // joinButton
             // 
-            this.joinButton.Location = new System.Drawing.Point(104, 144);
+            this.joinButton.Location = new System.Drawing.Point(136, 144);
             this.joinButton.Name = "joinButton";
             this.joinButton.Size = new System.Drawing.Size(80, 32);
             this.joinButton.TabIndex = 1;
             this.joinButton.Text = "Join";
             this.joinButton.UseVisualStyleBackColor = true;
+            this.joinButton.Click += new System.EventHandler(this.JoinButton_Click);
             // 
-            // textBox1
+            // usrName
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 2;
+            this.usrName.Location = new System.Drawing.Point(104, 40);
+            this.usrName.Name = "usrName";
+            this.usrName.Size = new System.Drawing.Size(100, 26);
+            this.usrName.TabIndex = 2;
             // 
-            // textBox2
+            // pass
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 3;
+            this.pass.Location = new System.Drawing.Point(104, 88);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(100, 26);
+            this.pass.TabIndex = 3;
             // 
             // infoGroup
             // 
             this.infoGroup.BackColor = System.Drawing.Color.Transparent;
-            this.infoGroup.Controls.Add(this.textBox1);
+            this.infoGroup.Controls.Add(this.passwordLabel);
+            this.infoGroup.Controls.Add(this.usernameLabel);
+            this.infoGroup.Controls.Add(this.usrName);
             this.infoGroup.Controls.Add(this.signInButton);
             this.infoGroup.Controls.Add(this.joinButton);
-            this.infoGroup.Controls.Add(this.textBox2);
-            this.infoGroup.Location = new System.Drawing.Point(80, 56);
+            this.infoGroup.Controls.Add(this.pass);
+            this.infoGroup.ForeColor = System.Drawing.Color.Black;
+            this.infoGroup.Location = new System.Drawing.Point(56, 56);
             this.infoGroup.Name = "infoGroup";
-            this.infoGroup.Size = new System.Drawing.Size(208, 232);
+            this.infoGroup.Size = new System.Drawing.Size(264, 232);
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(16, 96);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(78, 20);
+            this.passwordLabel.TabIndex = 5;
+            this.passwordLabel.Text = "Password";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(16, 48);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(83, 20);
+            this.usernameLabel.TabIndex = 4;
+            this.usernameLabel.Text = "Username";
             // 
             // userInfo
             // 
@@ -92,6 +116,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(366, 362);
             this.Controls.Add(this.infoGroup);
+            this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "userInfo";
@@ -107,9 +132,11 @@
 
         private System.Windows.Forms.Button signInButton;
         private System.Windows.Forms.Button joinButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox usrName;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.GroupBox infoGroup;
+        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label usernameLabel;
     }
 }
 
