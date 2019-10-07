@@ -40,10 +40,10 @@
             // 
             // signInButton
             // 
-            this.signInButton.Location = new System.Drawing.Point(32, 144);
+            this.signInButton.Location = new System.Drawing.Point(40, 176);
             this.signInButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signInButton.Name = "signInButton";
-            this.signInButton.Size = new System.Drawing.Size(72, 32);
+            this.signInButton.Size = new System.Drawing.Size(104, 48);
             this.signInButton.TabIndex = 0;
             this.signInButton.Text = "Sign In";
             this.signInButton.UseVisualStyleBackColor = true;
@@ -51,9 +51,9 @@
             // 
             // joinButton
             // 
-            this.joinButton.Location = new System.Drawing.Point(136, 144);
+            this.joinButton.Location = new System.Drawing.Point(184, 176);
             this.joinButton.Name = "joinButton";
-            this.joinButton.Size = new System.Drawing.Size(80, 32);
+            this.joinButton.Size = new System.Drawing.Size(88, 48);
             this.joinButton.TabIndex = 1;
             this.joinButton.Text = "Join";
             this.joinButton.UseVisualStyleBackColor = true;
@@ -61,16 +61,16 @@
             // 
             // usrName
             // 
-            this.usrName.Location = new System.Drawing.Point(104, 40);
+            this.usrName.Location = new System.Drawing.Point(168, 48);
             this.usrName.Name = "usrName";
-            this.usrName.Size = new System.Drawing.Size(100, 26);
+            this.usrName.Size = new System.Drawing.Size(136, 30);
             this.usrName.TabIndex = 2;
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(104, 88);
+            this.pass.Location = new System.Drawing.Point(168, 88);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(100, 26);
+            this.pass.Size = new System.Drawing.Size(136, 30);
             this.pass.TabIndex = 3;
             // 
             // infoGroup
@@ -82,31 +82,32 @@
             this.infoGroup.Controls.Add(this.signInButton);
             this.infoGroup.Controls.Add(this.joinButton);
             this.infoGroup.Controls.Add(this.pass);
+            this.infoGroup.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoGroup.ForeColor = System.Drawing.Color.Black;
             this.infoGroup.Location = new System.Drawing.Point(56, 56);
             this.infoGroup.Name = "infoGroup";
-            this.infoGroup.Size = new System.Drawing.Size(264, 232);
+            this.infoGroup.Size = new System.Drawing.Size(320, 280);
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
-            this.infoGroup.Text = "Info";
+            this.infoGroup.Text = "User Info";
             // 
             // passwordLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(16, 96);
+            this.passwordLabel.Location = new System.Drawing.Point(32, 96);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(78, 20);
+            this.passwordLabel.Size = new System.Drawing.Size(120, 32);
             this.passwordLabel.TabIndex = 5;
-            this.passwordLabel.Text = "Password";
+            this.passwordLabel.Text = "Password:";
+            this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // usernameLabel
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(16, 48);
+            this.usernameLabel.Location = new System.Drawing.Point(32, 48);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(83, 20);
+            this.usernameLabel.Size = new System.Drawing.Size(120, 32);
             this.usernameLabel.TabIndex = 4;
-            this.usernameLabel.Text = "Username";
+            this.usernameLabel.Text = "Username:";
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userInfo
             // 
@@ -114,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.spiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(366, 362);
+            this.ClientSize = new System.Drawing.Size(434, 414);
             this.Controls.Add(this.infoGroup);
             this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);

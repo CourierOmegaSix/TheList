@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 namespace WindowsFormsApp1
 {
-    class UserInfoVal{      
+    class MainFormValidation{      
 
         //Fields
         const int MIN_LENGTH = 8;
@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         String Password { get; set; }
 
         //Constructor
-        public UserInfoVal(String n, String p){
+        public MainFormValidation(String n, String p){
             UserName = n;
             Password = p;
         }
@@ -46,8 +46,16 @@ namespace WindowsFormsApp1
             Regex hasLower = new Regex(@"[a-z]+");
             Regex hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
 
-            if (Password == "" || Password == null){ MessageBox.Show("Password is required!");
+            if (Password == "" || Password == null || Password.Length == 0){ 
+                MessageBox.Show("Password is required!");
                 isValid = false;
+                return isValid;
+
+                if(Password.Length < 8 || Password.Length > 15){
+                    MessageBox.Show("Not a valid password!");
+                    isValid = false;
+                    return isValid;
+                }
             }
             else if (!hasNum.IsMatch(Password)) { MessageBox.Show("Password must contain at least one number!");
                 isValid = false;
@@ -61,13 +69,15 @@ namespace WindowsFormsApp1
             else if (!hasLower.IsMatch(Password)){ MessageBox.Show("Password must contain at least one lowercase letter!");
                 isValid = false;
             }
-            else { MessageBox.Show("Congrats your Password is valid!");
+            else { MessageBox.Show("Password is valid!");
                 isValid = true;
             }
             return isValid;
 
             //****** Add code to check if user exist and if username and password match in database!! ******
+
         }
+
     }
 }
 

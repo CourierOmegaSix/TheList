@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class userInfo : Form
     {
-        UserInfoVal infoVal;
+        MainFormValidation infoVal;
 
         public userInfo()
         {
@@ -21,14 +21,13 @@ namespace WindowsFormsApp1
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
- 
             String userName = usrName.Text;
             String passWord = pass.Text;
             bool userValid;
             bool passValid;
 
             //Create new instance of UserInfoVal, pass in user info, then check username and password.
-            infoVal = new UserInfoVal(userName, passWord);
+            infoVal = new MainFormValidation(userName, passWord);
             userValid = infoVal.UsernameCheck();
             passValid = infoVal.PassCheck();
 
@@ -50,7 +49,7 @@ namespace WindowsFormsApp1
             bool passValid;
 
             //Create new instance of UserInfoVal, pass in user info, then check username and password.
-            infoVal = new UserInfoVal(userName, passWord);
+            infoVal = new MainFormValidation(userName, passWord);
             userValid = infoVal.UsernameCheck();
             passValid = infoVal.PassCheck();
 
@@ -58,7 +57,7 @@ namespace WindowsFormsApp1
             if (!userValid || !passValid) { }
             else{
                 this.Hide();
-                NewUser newUserJoin = new NewUser();
+                NewUserForm newUserJoin = new NewUserForm(userName, passWord);
                 newUserJoin.ShowDialog();
                 this.Close();
             }
