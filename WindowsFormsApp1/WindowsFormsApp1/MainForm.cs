@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,6 +13,9 @@ namespace WindowsFormsApp1
     public partial class userInfo : Form
     {
         UserInfoVal infoVal;
+        ArrayList names = new ArrayList();
+
+
 
         public userInfo()
         {
@@ -46,6 +49,10 @@ namespace WindowsFormsApp1
         {
             String userName = usrName.Text;
             String passWord = pass.Text;
+            names.Add(userName);
+            string newjson = Newtonsoft.Json.JsonConvert.SerializeObject(names);
+            MessageBox.Show(newjson);
+
             bool userValid;
             bool passValid;
 
@@ -62,6 +69,11 @@ namespace WindowsFormsApp1
                 newUserJoin.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void userInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
