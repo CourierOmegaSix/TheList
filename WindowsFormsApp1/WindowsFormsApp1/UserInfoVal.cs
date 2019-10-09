@@ -12,8 +12,8 @@ namespace WindowsFormsApp1
         //Fields
         const int MIN_LENGTH = 8;
         const int MAX_LENGTH = 15;
-        String UserName {get; set;}
-        String Password { get; set; }
+        public String UserName {get; set;}
+        public String Password { get; set; }
 
         //Constructor
         public UserInfoVal(String n, String p){

@@ -51,7 +51,7 @@
             // joinButton
             // 
             this.joinButton.Location = new System.Drawing.Point(91, 94);
-            this.joinButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.joinButton.Margin = new System.Windows.Forms.Padding(2);
             this.joinButton.Name = "joinButton";
             this.joinButton.Size = new System.Drawing.Size(53, 21);
             this.joinButton.TabIndex = 1;
@@ -62,18 +62,20 @@
             // usrName
             // 
             this.usrName.Location = new System.Drawing.Point(69, 26);
-            this.usrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usrName.Margin = new System.Windows.Forms.Padding(2);
             this.usrName.Name = "usrName";
             this.usrName.Size = new System.Drawing.Size(68, 20);
             this.usrName.TabIndex = 2;
+            this.usrName.TextChanged += new System.EventHandler(this.usrName_TextChanged);
             // 
             // pass
             // 
             this.pass.Location = new System.Drawing.Point(69, 57);
-            this.pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pass.Margin = new System.Windows.Forms.Padding(2);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(68, 20);
             this.pass.TabIndex = 3;
+            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
             // 
             // infoGroup
             // 
@@ -86,9 +88,9 @@
             this.infoGroup.Controls.Add(this.pass);
             this.infoGroup.ForeColor = System.Drawing.Color.Black;
             this.infoGroup.Location = new System.Drawing.Point(37, 36);
-            this.infoGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoGroup.Margin = new System.Windows.Forms.Padding(2);
             this.infoGroup.Name = "infoGroup";
-            this.infoGroup.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoGroup.Padding = new System.Windows.Forms.Padding(2);
             this.infoGroup.Size = new System.Drawing.Size(176, 151);
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
