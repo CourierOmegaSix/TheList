@@ -82,7 +82,9 @@ namespace WindowsFormsApp1
                     login.writeFolder(login, path);
 
                     newUserJoin.ShowDialog();
+                    login.LoadJson();
                     this.Close();
+
                 }
                 //if folder doesn't exist will create it and do the same thing.
                 else

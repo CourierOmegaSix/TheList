@@ -37,8 +37,22 @@ namespace Logging
                 tw.Close();
             }
 
+
             //MessageBox.Show(json);
         }
+        public void LoadJson()
+        {
+            using (StreamReader r = new StreamReader(@"C:\Users\Public\json\users.txt"))
+            {
+                string json = r.ReadToEnd();
+                //List<Login> items = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Login>>(json);
+                Console.Write(items);
+            }
+
+
+        }
+
+
 
     }
 }
