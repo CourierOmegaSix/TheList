@@ -53,10 +53,7 @@ namespace WindowsFormsApp1
         {
             String userName = usrName.Text;
             String passWord = pass.Text;
-            //path to the folder to store usernames
-            string folderPath = (@"C:\Users\Public\json");
-            //path to the txt file for usernames
-            string path = (@"C:\Users\Public\json\users.txt");
+
             login = new Login(userName, passWord);
             
 
@@ -72,38 +69,18 @@ namespace WindowsFormsApp1
             //If valid hide main form and create newUser form.
             if (!userValid || !passValid) { }
             else{
-                //if folder path exist
-                if (Directory.Exists(folderPath))
-                {
                     this.Hide();
                     NewUser newUserJoin = new NewUser();
 
                     //uses the writeFolder function in Login.cs
-                    login.writeFolder(login, path);
+                    login.writeFolder(login);
 
                     newUserJoin.ShowDialog();
                     this.Close();
-                }
-                //if folder doesn't exist will create it and do the same thing.
-                else
-                {
-
-                    Directory.CreateDirectory(folderPath);
-
-                    this.Hide();
-                    NewUser newUserJoin = new NewUser();
-
-                    login.writeFolder(login, path);
-
-
-                    newUserJoin.ShowDialog();
-
-                    this.Close();
-
                 }
                 
             }
-        }
+        
 
         private void userInfo_Load(object sender, EventArgs e)
         {

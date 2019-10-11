@@ -11,6 +11,7 @@ namespace Logging
     {
         public string userName;
         public string passWord;
+        string path = (@"../../Login/Profiles.txt");
 
         public Login(string u, string p)
         {
@@ -28,7 +29,7 @@ namespace Logging
             return this.passWord;
         }
 
-        public void writeFolder(object wrote, string path)
+        public void writeFolder(object wrote)
         {
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
             using (var tw = new StreamWriter(path, true))
