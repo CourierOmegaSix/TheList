@@ -34,19 +34,22 @@ namespace WindowsFormsApp1
             bool userValid;
             bool passValid;
 
-            //Create new instance of UserInfoVal, pass in user info, then check username and password.
             infoVal = new UserInfoVal(userName, passWord);
-            userValid = infoVal.UsernameCheck();
-            passValid = infoVal.PassCheck();
 
-            if(!userValid || !passValid){}
-            else{
-                //If valid hide main form and create UserHome form. 
+            login = new Login(userName, passWord);
+            Login logincheck = login.JsonLogin(userName, passWord);
+
+            Console.WriteLine(logincheck.userName);
+            //if username and password match and rows of Profiles.txt then logincheck.userName wont be null
+            //and if it's not null, will then sate it found a match and load the next window.
+            if (logincheck.userName != null)
+            {
+                MessageBox.Show("Profile found!\n" + "Logging in as: " + logincheck.userName);
                 this.Hide();
                 UserHome homePage = new UserHome();
                 homePage.ShowDialog();
                 this.Close();
-            }                       
+            }
         }
 
         private void JoinButton_Click(object sender, EventArgs e)
@@ -74,6 +77,7 @@ namespace WindowsFormsApp1
 
                     //uses the writeFolder function in Login.cs
                     login.writeFolder(login);
+                    
 
                     newUserJoin.ShowDialog();
                     this.Close();
