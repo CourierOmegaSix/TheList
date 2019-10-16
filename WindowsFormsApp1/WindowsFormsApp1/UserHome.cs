@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            userInfo f1 = new userInfo();
+            UserInfo f1 = new UserInfo();
             f1.ShowDialog();
             this.Close();
         }

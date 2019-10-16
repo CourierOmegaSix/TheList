@@ -26,7 +26,7 @@ namespace Logging
         }
 
         //method used to store username/password into Profiles.txt
-        public void writeFolder(object wrote)
+        public void WriteFolder(object wrote)
         {
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
             using (var tw = new StreamWriter(path, true))

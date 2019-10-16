@@ -13,15 +13,13 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class userInfo : Form
+    public partial class UserInfo : Form
     {
         UserInfoVal infoVal;
         Login login;
         ArrayList names = new ArrayList();
 
-
-
-        public userInfo()
+        public UserInfo()
         {
             InitializeComponent();          
         }
@@ -31,8 +29,6 @@ namespace WindowsFormsApp1
  
             String userName = usrName.Text;
             String passWord = pass.Text;
-            bool userValid;
-            bool passValid;
 
             infoVal = new UserInfoVal(userName, passWord);
 
@@ -48,7 +44,10 @@ namespace WindowsFormsApp1
                 this.Hide();
                 UserHome homePage = new UserHome();
                 homePage.ShowDialog();
+                //Error message Disposable object created by 'new UserHome() is never disposed  //Add dispose method 10/16
+                //homePage.Dispose();
                 this.Close();
+                //homePage.Dispose();
             }
         }
 
@@ -56,13 +55,10 @@ namespace WindowsFormsApp1
         {
             String userName = usrName.Text;
             String passWord = pass.Text;
-
-            login = new Login(userName, passWord);
-            
-
-
             bool userValid;
             bool passValid;
+
+            login = new Login(userName, passWord);
 
             //Create new instance of UserInfoVal, pass in user info, then check username and password.
             infoVal = new UserInfoVal(userName, passWord);
@@ -70,33 +66,29 @@ namespace WindowsFormsApp1
             passValid = infoVal.PassCheck();
 
             //If valid hide main form and create newUser form.
-            if (!userValid || !passValid) { }
-            else{
-                    this.Hide();
-                    NewUser newUserJoin = new NewUser();
-
-                    //uses the writeFolder function in Login.cs
-                    login.writeFolder(login);
-                    
-
-                    newUserJoin.ShowDialog();
-                    this.Close();
-                }
-                
+            if(userValid && passValid)
+            {
+                this.Hide();
+                NewUserForm userJoin = new NewUserForm(userName, passWord);
+                login.WriteFolder(login);
+                userJoin.ShowDialog();
+                this.Close();
             }
+                
+        }
         
 
-        private void userInfo_Load(object sender, EventArgs e)
+        private void UserInfo_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void usrName_TextChanged(object sender, EventArgs e)
+        private void UsrName_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void pass_TextChanged(object sender, EventArgs e)
+        private void Pass_TextChanged(object sender, EventArgs e)
         {
 
         }

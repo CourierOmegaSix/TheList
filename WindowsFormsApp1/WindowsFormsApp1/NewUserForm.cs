@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             password = p;           
         }
       
-        private void submitButton_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
             String fName, lName, address, confirmPass;
             int zipCode;
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void resetButton_Click(object sender, EventArgs e)
+        private void ResetButton_Click(object sender, EventArgs e)
         {
 
         }

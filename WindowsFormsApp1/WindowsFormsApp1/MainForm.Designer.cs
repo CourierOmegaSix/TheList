@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class userInfo
+    partial class UserInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.usrName.Name = "usrName";
             this.usrName.Size = new System.Drawing.Size(68, 20);
             this.usrName.TabIndex = 2;
-            this.usrName.TextChanged += new System.EventHandler(this.usrName_TextChanged);
+            this.usrName.TextChanged += new System.EventHandler(this.UsrName_TextChanged);
             // 
             // pass
             // 
@@ -75,7 +75,7 @@
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(68, 20);
             this.pass.TabIndex = 3;
-            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
+            this.pass.TextChanged += new System.EventHandler(this.Pass_TextChanged);
             // 
             // infoGroup
             // 
@@ -129,7 +129,7 @@
             this.Name = "userInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Budget List";
-            this.Load += new System.EventHandler(this.userInfo_Load);
+            this.Load += new System.EventHandler(this.UserInfo_Load);
             this.infoGroup.ResumeLayout(false);
             this.infoGroup.PerformLayout();
             this.ResumeLayout(false);
