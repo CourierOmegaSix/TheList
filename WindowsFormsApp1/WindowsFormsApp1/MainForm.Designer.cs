@@ -75,6 +75,7 @@
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(68, 20);
             this.pass.TabIndex = 3;
+            this.pass.UseSystemPasswordChar = true;
             this.pass.TextChanged += new System.EventHandler(this.Pass_TextChanged);
             // 
             // infoGroup
@@ -95,6 +96,7 @@
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
+            this.infoGroup.Enter += new System.EventHandler(this.infoGroup_Enter);
             // 
             // passwordLabel
             // 
@@ -116,7 +118,7 @@
             this.usernameLabel.TabIndex = 4;
             this.usernameLabel.Text = "Username";
             // 
-            // userInfo
+            // UserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +128,7 @@
             this.Controls.Add(this.infoGroup);
             this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.Name = "userInfo";
+            this.Name = "UserInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Budget List";
             this.Load += new System.EventHandler(this.UserInfo_Load);

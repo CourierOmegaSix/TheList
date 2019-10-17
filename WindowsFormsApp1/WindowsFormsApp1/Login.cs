@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Security.Cryptography;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -26,8 +27,10 @@ namespace Logging
         }
 
         //method used to store username/password into Profiles.txt
-        public void WriteFolder(object wrote)
+        public void WriteFolder(Login wrote)
         {
+            wrote.passWord = wrote.passWord.GetHashCode().ToString();
+
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
             using (var tw = new StreamWriter(path, true))
             {

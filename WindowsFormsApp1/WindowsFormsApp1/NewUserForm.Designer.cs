@@ -32,6 +32,12 @@
             this.lNameLabel = new System.Windows.Forms.Label();
             this.dobLabel = new System.Windows.Forms.Label();
             this.newUserInfoGroup = new System.Windows.Forms.GroupBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.zipcodeBox = new System.Windows.Forms.TextBox();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.zipcodeLabel = new System.Windows.Forms.Label();
             this.dobBox = new System.Windows.Forms.DateTimePicker();
             this.confirmPassBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
@@ -43,12 +49,6 @@
             this.userNameLabel = new System.Windows.Forms.Label();
             this.userInstructionLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.zipcodeLabel = new System.Windows.Forms.Label();
-            this.zipcodeBox = new System.Windows.Forms.TextBox();
-            this.submitButton = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.addressBox = new System.Windows.Forms.TextBox();
             this.newUserInfoGroup.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +112,63 @@
             this.newUserInfoGroup.TabIndex = 3;
             this.newUserInfoGroup.TabStop = false;
             this.newUserInfoGroup.Text = "Create Profile";
+            this.newUserInfoGroup.Enter += new System.EventHandler(this.newUserInfoGroup_Enter);
+            // 
+            // addressBox
+            // 
+            this.addressBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addressBox.Location = new System.Drawing.Point(598, 117);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(166, 23);
+            this.addressBox.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(481, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 39);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Address:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // resetButton
+            // 
+            this.resetButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetButton.Location = new System.Drawing.Point(481, 377);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(100, 43);
+            this.resetButton.TabIndex = 7;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // zipcodeBox
+            // 
+            this.zipcodeBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zipcodeBox.Location = new System.Drawing.Point(598, 182);
+            this.zipcodeBox.Name = "zipcodeBox";
+            this.zipcodeBox.Size = new System.Drawing.Size(166, 23);
+            this.zipcodeBox.TabIndex = 17;
+            // 
+            // submitButton
+            // 
+            this.submitButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(221, 377);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(100, 43);
+            this.submitButton.TabIndex = 6;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            // 
+            // zipcodeLabel
+            // 
+            this.zipcodeLabel.Location = new System.Drawing.Point(481, 182);
+            this.zipcodeLabel.Name = "zipcodeLabel";
+            this.zipcodeLabel.Size = new System.Drawing.Size(107, 39);
+            this.zipcodeLabel.TabIndex = 16;
+            this.zipcodeLabel.Text = "Zipcode:";
+            this.zipcodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dobBox
             // 
@@ -121,16 +178,17 @@
             this.dobBox.MaxDate = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             this.dobBox.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dobBox.Name = "dobBox";
-            this.dobBox.Size = new System.Drawing.Size(140, 30);
+            this.dobBox.Size = new System.Drawing.Size(140, 23);
             this.dobBox.TabIndex = 12;
             this.dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
+            this.dobBox.ValueChanged += new System.EventHandler(this.dobBox_ValueChanged);
             // 
             // confirmPassBox
             // 
             this.confirmPassBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassBox.Location = new System.Drawing.Point(598, 247);
             this.confirmPassBox.Name = "confirmPassBox";
-            this.confirmPassBox.Size = new System.Drawing.Size(170, 30);
+            this.confirmPassBox.Size = new System.Drawing.Size(170, 23);
             this.confirmPassBox.TabIndex = 11;
             // 
             // passwordBox
@@ -138,23 +196,27 @@
             this.passwordBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordBox.Location = new System.Drawing.Point(182, 247);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(182, 30);
+            this.passwordBox.ReadOnly = true;
+            this.passwordBox.Size = new System.Drawing.Size(182, 23);
             this.passwordBox.TabIndex = 10;
+            this.passwordBox.UseSystemPasswordChar = true;
             // 
             // usernameBox
             // 
             this.usernameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameBox.Location = new System.Drawing.Point(182, 182);
             this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(182, 30);
+            this.usernameBox.ReadOnly = true;
+            this.usernameBox.Size = new System.Drawing.Size(182, 23);
             this.usernameBox.TabIndex = 9;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // lNameBox
             // 
             this.lNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameBox.Location = new System.Drawing.Point(182, 117);
             this.lNameBox.Name = "lNameBox";
-            this.lNameBox.Size = new System.Drawing.Size(182, 30);
+            this.lNameBox.Size = new System.Drawing.Size(182, 23);
             this.lNameBox.TabIndex = 7;
             // 
             // fNameBox
@@ -162,7 +224,7 @@
             this.fNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameBox.Location = new System.Drawing.Point(182, 52);
             this.fNameBox.Name = "fNameBox";
-            this.fNameBox.Size = new System.Drawing.Size(182, 30);
+            this.fNameBox.Size = new System.Drawing.Size(182, 23);
             this.fNameBox.TabIndex = 6;
             // 
             // confirmPassLabel
@@ -215,65 +277,9 @@
             this.welcomeLabel.Text = "Welcome to Budget List";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // zipcodeLabel
+            // NewUserForm
             // 
-            this.zipcodeLabel.Location = new System.Drawing.Point(481, 182);
-            this.zipcodeLabel.Name = "zipcodeLabel";
-            this.zipcodeLabel.Size = new System.Drawing.Size(107, 39);
-            this.zipcodeLabel.TabIndex = 16;
-            this.zipcodeLabel.Text = "Zipcode:";
-            this.zipcodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // zipcodeBox
-            // 
-            this.zipcodeBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zipcodeBox.Location = new System.Drawing.Point(598, 182);
-            this.zipcodeBox.Name = "zipcodeBox";
-            this.zipcodeBox.Size = new System.Drawing.Size(166, 30);
-            this.zipcodeBox.TabIndex = 17;
-            // 
-            // submitButton
-            // 
-            this.submitButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(221, 377);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(100, 43);
-            this.submitButton.TabIndex = 6;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
-            this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
-            // 
-            // resetButton
-            // 
-            this.resetButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(481, 377);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(100, 43);
-            this.resetButton.TabIndex = 7;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.ResetButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(481, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 39);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Address:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // addressBox
-            // 
-            this.addressBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressBox.Location = new System.Drawing.Point(598, 117);
-            this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(166, 30);
-            this.addressBox.TabIndex = 19;
-            // 
-            // NewUser
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.spiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -282,7 +288,7 @@
             this.Controls.Add(this.userInstructionLabel);
             this.Controls.Add(this.newUserInfoGroup);
             this.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "NewUser";
+            this.Name = "NewUserForm";
             this.Text = "New Profile";
             this.newUserInfoGroup.ResumeLayout(false);
             this.newUserInfoGroup.PerformLayout();

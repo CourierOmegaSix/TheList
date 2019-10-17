@@ -92,5 +92,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void infoGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
