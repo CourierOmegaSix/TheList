@@ -37,17 +37,17 @@ namespace WindowsFormsApp1
 
             Console.WriteLine(logincheck.userName);
             //if username and password match and rows of Profiles.txt then logincheck.userName wont be null
-            //and if it's not null, will then sate it found a match and load the next window.
+            //and if it's not null, will then sate it found a match and load the next window. (JE)
             if (logincheck.userName != null)
             {
                 MessageBox.Show("Profile found!\n" + "Logging in as: " + logincheck.userName);
                 this.Hide();
+
+                //Error message Disposable object created by 'new UserHome() is never disposed. Include dispose() method or wrap in using statement? (KJ)
                 UserHome homePage = new UserHome();
-                homePage.ShowDialog();
-                //Error message Disposable object created by 'new UserHome() is never disposed  //Add dispose method 10/16
-                //homePage.Dispose();
+                homePage.ShowDialog();                
                 this.Close();
-                //homePage.Dispose();
+                homePage.Dispose();
             }
         }
 

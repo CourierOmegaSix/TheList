@@ -16,7 +16,7 @@ namespace Logging
         public string userName;
         public string passWord;
 
-        //path to Profiles.txt
+        //path to Profiles.txt (JE)
         string path = (@"../../Login/Profiles.txt");
 
 
@@ -26,7 +26,7 @@ namespace Logging
             this.passWord = p;
         }
 
-        //method used to store username/password into Profiles.txt
+        //method used to store username/password into Profiles.txt (JE)
         public void WriteFolder(Login wrote)
         {
             wrote.passWord = wrote.passWord.GetHashCode().ToString();
@@ -39,14 +39,14 @@ namespace Logging
             }
         }
 
-        //method used to search for matchin username and password
+        //method used to search for matchin username and password (JE)
         public Login JsonLogin(string username, string password)
         {
             Login objic = new Login(null, null);
 
 
             string[] lines = File.ReadAllLines(path);
-            //moves through line by line seeind if there is a match between Profiles.txt and the username/password
+            //moves through line by line seeind if there is a match between Profiles.txt and the username/password (JE)
             foreach (string line in lines)
             {
 

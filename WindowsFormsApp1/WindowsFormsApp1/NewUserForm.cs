@@ -36,14 +36,6 @@ namespace WindowsFormsApp1
             zipCode = zipcodeBox.Text;
             dob = dobBox.Value;
 
-            
-
-
-
-
-
-
-
         }
 
         private void ResetButton_Click(object sender, EventArgs e)
