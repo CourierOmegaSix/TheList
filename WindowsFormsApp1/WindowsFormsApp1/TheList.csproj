@@ -140,6 +140,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login\Profiles.txt" />
+    <None Include="Resources\blueSwish.jpg" />
+    <None Include="Resources\spiralBlue1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

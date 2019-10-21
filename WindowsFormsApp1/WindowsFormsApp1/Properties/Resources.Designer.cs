@@ -63,9 +63,39 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blueSwish {
+            get {
+                object obj = ResourceManager.GetObject("blueSwish", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap spiralBlue {
             get {
                 object obj = ResourceManager.GetObject("spiralBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiralBlue1 {
+            get {
+                object obj = ResourceManager.GetObject("spiralBlue1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiralBlue2 {
+            get {
+                object obj = ResourceManager.GetObject("spiralBlue2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
