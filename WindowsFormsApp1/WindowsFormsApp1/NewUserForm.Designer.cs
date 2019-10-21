@@ -54,7 +54,7 @@
             // 
             // fNameLabel
             // 
-            this.fNameLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fNameLabel.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameLabel.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.fNameLabel.Location = new System.Drawing.Point(26, 52);
             this.fNameLabel.Name = "fNameLabel";
@@ -75,7 +75,7 @@
             // 
             // dobLabel
             // 
-            this.dobLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dobLabel.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dobLabel.Location = new System.Drawing.Point(520, 52);
             this.dobLabel.Name = "dobLabel";
             this.dobLabel.Size = new System.Drawing.Size(70, 39);

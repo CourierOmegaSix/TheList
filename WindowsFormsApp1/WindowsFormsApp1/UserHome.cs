@@ -24,5 +24,15 @@ namespace WindowsFormsApp1
             f1.ShowDialog();
             this.Close();
         }
+
+        private void UserHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
