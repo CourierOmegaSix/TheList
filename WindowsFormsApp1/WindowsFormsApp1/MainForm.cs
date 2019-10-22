@@ -32,15 +32,13 @@ namespace WindowsFormsApp1
 
             infoVal = new UserInfoVal(userName, passWord);
 
-            login = new Login(userName, passWord);
-            Login logincheck = login.JsonLogin(userName, passWord);
+            Boolean logincheck = Login.JsonLogin(userName, passWord);
 
-            Console.WriteLine(logincheck.userName);
-            //if username and password match and rows of Profiles.txt then logincheck.userName wont be null
-            //and if it's not null, will then sate it found a match and load the next window. (JE)
-            if (logincheck.userName != null)
+            Console.WriteLine(logincheck);
+
+            if (logincheck == true)
             {
-                MessageBox.Show("Profile found!\n" + "Logging in as: " + logincheck.userName);
+                MessageBox.Show("Profile found!\n" + "Logging in as: " + userName,"Sucess");
                 this.Hide();
 
                 //Error message Disposable object created by 'new UserHome() is never disposed. Include dispose() method or wrap in using statement? (KJ)
@@ -48,6 +46,22 @@ namespace WindowsFormsApp1
                 homePage.ShowDialog();                
                 this.Close();
                 homePage.Dispose();
+            }
+            else if(userName == "" && passWord == "")
+            {
+                MessageBox.Show("Please enter a UserName and PassWord.");
+            }
+            else if(userName == "")
+            {
+                MessageBox.Show("Please enter the UserName.");
+            }
+            else if(passWord == "")
+            {
+                MessageBox.Show("Please enter the PassWord.");
+            }
+            else
+            {
+                MessageBox.Show("Profile not found.", "Error");
             }
         }
 
@@ -57,8 +71,6 @@ namespace WindowsFormsApp1
             String passWord = pass.Text;
             bool userValid;
             bool passValid;
-
-            login = new Login(userName, passWord);
 
             //Create new instance of UserInfoVal, pass in user info, then check username and password.
             infoVal = new UserInfoVal(userName, passWord);
@@ -70,7 +82,7 @@ namespace WindowsFormsApp1
             {
                 this.Hide();
                 NewUserForm userJoin = new NewUserForm(userName, passWord);
-                login.WriteFolder(login);
+                Login.WriteFolder(infoVal);
                 userJoin.ShowDialog();
                 this.Close();
             }

@@ -11,27 +11,21 @@ using System.Threading.Tasks;
 
 namespace Logging
 {
-    class Login
+    public class Login
     {
-        public string userName;
-        public string passWord;
-
         //path to Profiles.txt (JE)
-        string path = (@"../../Login/Profiles.txt");
+        private static string  path = (@"../../Login/Profiles.txt");
 
-
-        public Login(string u, string p)
-        {
-            this.userName = u;
-            this.passWord = p;
-        }
 
         //method used to store username/password into Profiles.txt (JE)
-        public void WriteFolder(Login wrote)
+        public static void WriteFolder(UserInfoVal wrote)
         {
-            wrote.passWord = wrote.passWord.GetHashCode().ToString();
+            //hashes the password (JE)
+            wrote.Password = wrote.Password.GetHashCode().ToString();
 
+            //Seriazlies the wrote object(UserInfoVal's UserName and Password) into a json string(JE)
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
+
             using (var tw = new StreamWriter(path, true))
             {
                 tw.WriteLine(json.ToString());
@@ -40,29 +34,25 @@ namespace Logging
         }
 
         //method used to search for matchin username and password (JE)
-        public Login JsonLogin(string username, string password)
+        public static Boolean JsonLogin(string username, string password)
         {
-            Login objic = new Login(null, null);
+            //Hashes password before doing calculations(JE)
+            string p = password.GetHashCode().ToString();
 
 
             string[] lines = File.ReadAllLines(path);
-            //moves through line by line seeind if there is a match between Profiles.txt and the username/password (JE)
+            //moves through line by line seeing if there is a match between Profiles.txt and the username/password (JE)
             foreach (string line in lines)
             {
-
+                //Deserialzes the line in the text file back into the UserInfoVal Object (JE)
                 dynamic obj1 = Newtonsoft.Json.JsonConvert.DeserializeObject(line);
 
-                if (obj1.userName == username && obj1.passWord == password)
+                if (obj1.UserName == username && obj1.Password == p)
                 {
-                    objic.userName = obj1.userName;
-                    objic.passWord = obj1.passWord;
-
-                    Console.WriteLine("working!!! YESSS~!!!!!");
-                    return objic;
+                    return true;
                 }
             }
-            return objic;
+            return false ;
         }
-
     }
 }

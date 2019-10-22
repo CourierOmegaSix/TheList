@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-namespace WindowsFormsApp1
-{
-    class UserInfoVal
+
+    public class UserInfoVal
     {
 
         //Fields
@@ -23,7 +22,8 @@ namespace WindowsFormsApp1
             Password = p;
         }
 
-        public bool UsernameCheck()
+
+    public bool UsernameCheck()
         {
             bool isValid = false;
 
@@ -92,4 +92,4 @@ namespace WindowsFormsApp1
             //****** Add code to check if user exist and if username and password match in database!! ******
         }
     }
-}
+
