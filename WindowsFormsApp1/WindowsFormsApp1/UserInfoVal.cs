@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
+namespace WindowsFormsApp1
+{
     public class UserInfoVal
     {
-
         //Fields
         const int MIN_LENGTH = 8;
         const int MAX_LENGTH = 15;
@@ -23,7 +20,7 @@ using System.Text.RegularExpressions;
         }
 
 
-    public bool UsernameCheck()
+        public bool UsernameCheck()
         {
             bool isValid = false;
 
@@ -57,7 +54,7 @@ using System.Text.RegularExpressions;
                 MessageBox.Show("Password is required!");
                 isValid = false;
             }
-            else if(Password.Length < MIN_LENGTH || Password.Length > MAX_LENGTH)
+            else if (Password.Length < MIN_LENGTH || Password.Length > MAX_LENGTH)
             {
                 MessageBox.Show("Password must be between 8-15 characters long.");
                 isValid = false;
@@ -92,4 +89,4 @@ using System.Text.RegularExpressions;
             //****** Add code to check if user exist and if username and password match in database!! ******
         }
     }
-
+}
