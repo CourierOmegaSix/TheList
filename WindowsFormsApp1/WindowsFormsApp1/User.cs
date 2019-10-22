@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace WindowsFormsApp1
 {
+    [DataContract]
     class User
     {
         // Fields
-        protected LinkedList<Goal> goals;
-        protected decimal spendingFunds;
+        [DataMember] protected LinkedList<Goal> goals;
+        [DataMember] protected decimal spendingFunds;
 
         // Properties
         public LinkedList<Goal> Goals { get; }
