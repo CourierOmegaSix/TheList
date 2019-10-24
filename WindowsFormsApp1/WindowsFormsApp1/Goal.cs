@@ -2,7 +2,7 @@
 
 namespace WindowsFormsApp1
 {
-    class Goal : IComparable<Goal>
+    public class Goal : IComparable<Goal>
     {
         // Fields
         private string goalName;

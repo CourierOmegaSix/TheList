@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Logging;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -18,7 +17,6 @@ namespace WindowsFormsApp1
 
         private void SignInButton_Click(object sender, EventArgs e)
         {
- 
             String userName = usrName.Text;
             String passWord = pass.Text;
 

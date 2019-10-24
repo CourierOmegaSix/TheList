@@ -4,13 +4,21 @@ using System.Runtime.Serialization;
 namespace WindowsFormsApp1
 {
     [DataContract]
-    class User
+    public class User
     {
         // Fields
+        [DataMember] protected Dictionary<string, string> userInformation;
         [DataMember] protected LinkedList<Goal> goals;
         [DataMember] protected decimal spendingFunds;
 
         // Properties
+        public Dictionary<string, string> UserInformation
+        {
+            get
+            {
+                return this.userInformation;
+            }
+        }
         public LinkedList<Goal> Goals { get; }
         public decimal SpendingFunds
         {
@@ -28,6 +36,7 @@ namespace WindowsFormsApp1
         // Constructor
         public User()
         {
+            userInformation = new Dictionary<string, string>();
             Goals = new LinkedList<Goal>();
             SpendingFunds = 0.00M;
         }

@@ -5,9 +5,13 @@ namespace WindowsFormsApp1
 {
     public partial class UserHome : Form
     {
-        public UserHome()
+        private User user;
+        public User User { get; set; }
+
+        public UserHome(User user)
         {
             InitializeComponent();
+            User = user;
         }
 
         private void button1_Click(object sender, EventArgs e)

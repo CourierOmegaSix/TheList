@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -28,6 +29,19 @@ namespace WindowsFormsApp1
             confirmPass = confirmPassBox.Text;
             zipCode = zipcodeBox.Text;
             dob = dobBox.Value;
+
+            // User creation (CK)
+            User user = new User();
+            user.UserInformation.Add("firstName", fName);
+            user.UserInformation.Add("lastName", lName);
+            user.UserInformation.Add("address", address);
+            user.UserInformation.Add("zipCode", zipCode);
+            user.UserInformation.Add("dateOfBirth", dob.ToString());
+
+            UserHome userHome = new UserHome(user);
+            userHome.ShowDialog();
+            this.Close();
+            this.Dispose();
 
         }
 
