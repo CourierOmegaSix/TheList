@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -37,6 +39,14 @@ namespace WindowsFormsApp1
             user.UserInformation.Add("address", address);
             user.UserInformation.Add("zipCode", zipCode);
             user.UserInformation.Add("dateOfBirth", dob.ToString());
+
+            string path = (@"../../Login/UserData.txt");
+            string temp = JsonConvert.SerializeObject(user);
+            using(StreamWriter streamWriter = new StreamWriter(path))
+            {
+                streamWriter.WriteLine(temp.ToString());
+                streamWriter.Close();
+            }
 
             UserHome userHome = new UserHome(user);
             userHome.ShowDialog();

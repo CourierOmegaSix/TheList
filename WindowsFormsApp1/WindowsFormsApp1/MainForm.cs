@@ -32,10 +32,10 @@ namespace WindowsFormsApp1
                 this.Hide();
 
                 //Error message Disposable object created by 'new UserHome() is never disposed. Include dispose() method or wrap in using statement? (KJ)
-                UserHome homePage = new UserHome();
-                homePage.ShowDialog();                
-                this.Close();
-                homePage.Dispose();
+                //UserHome homePage = new UserHome();
+                //homePage.ShowDialog();                
+                //this.Close();
+                //homePage.Dispose();
             }
             else if(userName == "" && passWord == "")
             {
