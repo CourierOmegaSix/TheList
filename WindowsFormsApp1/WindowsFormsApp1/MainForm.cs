@@ -7,8 +7,6 @@ namespace WindowsFormsApp1
     public partial class UserInfo : Form
     {
         UserInfoVal infoVal;
-        Login login;
-        ArrayList names = new ArrayList();
 
         public UserInfo()
         {
@@ -22,7 +20,7 @@ namespace WindowsFormsApp1
 
             infoVal = new UserInfoVal(userName, passWord);
 
-            Boolean logincheck = Login.JsonLogin(userName, passWord);
+            Boolean logincheck = Login.searchLogin(userName, passWord);
 
             Console.WriteLine(logincheck);
 
@@ -32,9 +30,10 @@ namespace WindowsFormsApp1
                 this.Hide();
 
                 //Error message Disposable object created by 'new UserHome() is never disposed. Include dispose() method or wrap in using statement? (KJ)
-                //UserHome homePage = new UserHome();
-                //homePage.ShowDialog();                
-                //this.Close();
+                User temp = new User();
+                UserHome homePage = new UserHome(temp);
+                homePage.ShowDialog();                
+                this.Close();
                 //homePage.Dispose();
             }
             else if(userName == "" && passWord == "")
@@ -72,7 +71,7 @@ namespace WindowsFormsApp1
             {
                 this.Hide();
                 NewUserForm userJoin = new NewUserForm(userName, passWord);
-                Login.WriteFolder(infoVal);
+                Login.recordLogin(infoVal);
                 userJoin.ShowDialog();
                 this.Close();
             }

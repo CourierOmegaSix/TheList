@@ -226,6 +226,7 @@
             this.fNameBox.Name = "fNameBox";
             this.fNameBox.Size = new System.Drawing.Size(182, 23);
             this.fNameBox.TabIndex = 6;
+            this.fNameBox.TextChanged += new System.EventHandler(this.fNameBox_TextChanged);
             // 
             // confirmPassLabel
             // 

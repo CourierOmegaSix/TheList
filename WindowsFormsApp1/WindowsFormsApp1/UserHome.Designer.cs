@@ -101,6 +101,7 @@
             this.Goal_ListBox.Name = "Goal_ListBox";
             this.Goal_ListBox.Size = new System.Drawing.Size(200, 388);
             this.Goal_ListBox.TabIndex = 3;
+            this.Goal_ListBox.SelectedIndexChanged += new System.EventHandler(this.Goal_ListBox_SelectedIndexChanged);
             // 
             // label1
             // 
