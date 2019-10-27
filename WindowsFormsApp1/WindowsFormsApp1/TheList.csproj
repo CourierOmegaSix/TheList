@@ -140,8 +140,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Login\omega.txt" />
     <Content Include="Login\Profiles.txt" />
-    <Content Include="Login\UserData.txt" />
     <None Include="Resources\blueSwish.jpg" />
     <None Include="Resources\spiralBlue1.jpg" />
   </ItemGroup>

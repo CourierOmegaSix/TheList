@@ -6,12 +6,24 @@ namespace WindowsFormsApp1
     public partial class UserHome : Form
     {
         private User user;
-        public User User { get; set; }
+        public User User 
+        {
+            get
+            {
+                return this.user;
+            }
+
+            set
+            {
+                this.user = value;
+            }
+        }
 
         public UserHome(User user)
         {
             InitializeComponent();
             User = user;
+            Console.WriteLine(User.UserInformation["firstName"]);
         }
 
         private void button1_Click(object sender, EventArgs e)

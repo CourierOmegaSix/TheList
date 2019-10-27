@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
@@ -28,14 +30,15 @@ namespace WindowsFormsApp1
 
             if (logincheck == true)
             {
+                User user = JsonConvert.DeserializeObject<User>(File.ReadAllText(@"../../Login/" + userName + ".txt"));
                 MessageBox.Show("Profile found!\n" + "Logging in as: " + userName,"Sucess");
                 this.Hide();
 
                 //Error message Disposable object created by 'new UserHome() is never disposed. Include dispose() method or wrap in using statement? (KJ)
-                //UserHome homePage = new UserHome();
-                //homePage.ShowDialog();                
-                //this.Close();
-                //homePage.Dispose();
+                UserHome homePage = new UserHome(user);
+                homePage.ShowDialog();                
+                this.Close();
+                homePage.Dispose();
             }
             else if(userName == "" && passWord == "")
             {

@@ -1,1 +1,0 @@
-{"userInformation":{"firstName":"Chester","lastName":"Kittle","address":"123 Test Ln.","zipCode":"12345","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":0.00}

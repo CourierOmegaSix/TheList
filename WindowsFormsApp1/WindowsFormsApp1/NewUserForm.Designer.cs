@@ -190,6 +190,7 @@
             this.confirmPassBox.Name = "confirmPassBox";
             this.confirmPassBox.Size = new System.Drawing.Size(170, 23);
             this.confirmPassBox.TabIndex = 11;
+            this.confirmPassBox.UseSystemPasswordChar = true;
             // 
             // passwordBox
             // 

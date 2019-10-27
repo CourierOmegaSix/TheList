@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             user.UserInformation.Add("zipCode", zipCode);
             user.UserInformation.Add("dateOfBirth", dob.ToString());
 
-            string path = (@"../../Login/UserData.txt");
+            string path = (@"../../Login/" + userName + ".txt");
             string temp = JsonConvert.SerializeObject(user);
             using(StreamWriter streamWriter = new StreamWriter(path))
             {
@@ -48,10 +48,10 @@ namespace WindowsFormsApp1
                 streamWriter.Close();
             }
 
+            this.Hide();
             UserHome userHome = new UserHome(user);
             userHome.ShowDialog();
             this.Close();
-            this.Dispose();
 
         }
 
