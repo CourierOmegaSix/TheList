@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 
 
         //method used to store username/password into Profiles.txt (JE)
-        public static void WriteFolder(UserInfoVal wrote)
+        public static void recordLogin(UserInfoVal wrote)
         {
             //hashes the password (JE)
             wrote.Password = wrote.Password.GetHashCode().ToString();
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         }
 
         //method used to search for matchin username and password (JE)
-        public static Boolean JsonLogin(string username, string password)
+        public static Boolean searchLogin(string username, string password)
         {
             //Hashes password before doing calculations(JE)
             string p = password.GetHashCode().ToString();
