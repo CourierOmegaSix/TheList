@@ -72,6 +72,7 @@
             this.RemoveGoal_Button.TabIndex = 1;
             this.RemoveGoal_Button.Text = "Remove Goal";
             this.RemoveGoal_Button.UseVisualStyleBackColor = true;
+            this.RemoveGoal_Button.Click += new System.EventHandler(this.RemoveGoal_Button_Click);
             // 
             // Cost_ListBox
             // 
@@ -122,6 +123,7 @@
             this.AddGoal_Button.TabIndex = 0;
             this.AddGoal_Button.Text = "Add Goal";
             this.AddGoal_Button.UseVisualStyleBackColor = true;
+            this.AddGoal_Button.Click += new System.EventHandler(this.AddGoal_Button_Click);
             // 
             // groupBox5
             // 

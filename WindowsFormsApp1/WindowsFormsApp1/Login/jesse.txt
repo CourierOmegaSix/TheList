@@ -1,0 +1,1 @@
+{"userInformation":{"firstName":"asdf","lastName":"asdfasd","address":"asdfasdf","zipCode":"asdfasdf","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":0.00}

@@ -48,5 +48,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void AddGoal_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveGoal_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
