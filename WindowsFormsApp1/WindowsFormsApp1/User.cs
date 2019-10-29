@@ -49,5 +49,9 @@ namespace WindowsFormsApp1
             Goal g = new Goal(name, p);
             this.Goals.AddLast(g);
         }
+        public void RemoveGoal(string name, string spent)
+        {
+
+        }
     }
 }

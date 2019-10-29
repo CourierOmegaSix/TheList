@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fNameLabel = new System.Windows.Forms.Label();
-            this.amountSpentBox = new System.Windows.Forms.TextBox();
-            this.removeGoalButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.removeGoalButton = new System.Windows.Forms.Button();
+            this.amountSpentBox = new System.Windows.Forms.TextBox();
+            this.fNameLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,36 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(248, 120);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 43);
+            this.cancelButton.TabIndex = 9;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // removeGoalButton
+            // 
+            this.removeGoalButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeGoalButton.Location = new System.Drawing.Point(24, 120);
+            this.removeGoalButton.Name = "removeGoalButton";
+            this.removeGoalButton.Size = new System.Drawing.Size(168, 43);
+            this.removeGoalButton.TabIndex = 8;
+            this.removeGoalButton.Text = "Remove Goal";
+            this.removeGoalButton.UseVisualStyleBackColor = true;
+            this.removeGoalButton.Click += new System.EventHandler(this.removeGoalButton_Click);
+            // 
+            // amountSpentBox
+            // 
+            this.amountSpentBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountSpentBox.Location = new System.Drawing.Point(216, 40);
+            this.amountSpentBox.Name = "amountSpentBox";
+            this.amountSpentBox.Size = new System.Drawing.Size(182, 23);
+            this.amountSpentBox.TabIndex = 7;
+            // 
             // fNameLabel
             // 
             this.fNameLabel.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,37 +90,9 @@
             this.fNameLabel.Text = "Amount Spent:";
             this.fNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // amountSpentBox
-            // 
-            this.amountSpentBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountSpentBox.Location = new System.Drawing.Point(216, 40);
-            this.amountSpentBox.Name = "amountSpentBox";
-            this.amountSpentBox.Size = new System.Drawing.Size(182, 30);
-            this.amountSpentBox.TabIndex = 7;
-            // 
-            // removeGoalButton
-            // 
-            this.removeGoalButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeGoalButton.Location = new System.Drawing.Point(24, 120);
-            this.removeGoalButton.Name = "removeGoalButton";
-            this.removeGoalButton.Size = new System.Drawing.Size(168, 43);
-            this.removeGoalButton.TabIndex = 8;
-            this.removeGoalButton.Text = "Remove Goal";
-            this.removeGoalButton.UseVisualStyleBackColor = true;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(248, 120);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(100, 43);
-            this.cancelButton.TabIndex = 9;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
             // RemoveGoalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -98,7 +100,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RemoveGoalForm";

@@ -64,6 +64,10 @@ namespace WindowsFormsApp1
 
         private void RemoveGoal_Button_Click(object sender, EventArgs e)
         {
+            RemoveGoalForm RemoveGoal = new RemoveGoalForm();
+            RemoveGoal.ShowDialog();
+
+            RefreshBox();
 
         }
 
