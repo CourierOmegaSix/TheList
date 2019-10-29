@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
             infoVal = new UserInfoVal(userName, passWord);
 
-            Boolean logincheck = Login.JsonLogin(userName, passWord);
+            Boolean logincheck = Login.searchLogin(userName, passWord);
 
             Console.WriteLine(logincheck);
 
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
             {
                 this.Hide();
                 NewUserForm userJoin = new NewUserForm(userName, passWord);
-                Login.WriteFolder(infoVal);
+                Login.recordLogin(infoVal);
                 userJoin.ShowDialog();
                 this.Close();
             }
