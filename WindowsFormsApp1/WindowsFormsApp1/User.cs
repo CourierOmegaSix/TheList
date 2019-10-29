@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
         //method to add to the goals array(JE)
         public void AddGoal(string name, string price)
         {
-            int p = Int32.Parse(price);
+            decimal p = decimal.Parse(price);
             Goal g = new Goal(name, p);
             this.Goals.AddLast(g);
         }
