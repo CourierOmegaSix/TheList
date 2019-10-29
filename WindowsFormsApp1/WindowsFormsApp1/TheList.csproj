@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddGoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddGoalForm.Designer.cs">
+      <DependentUpon>AddGoalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Goal.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainForm.cs">
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveGoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveGoalForm.Designer.cs">
+      <DependentUpon>RemoveGoalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserHome.cs">
@@ -91,11 +103,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoVal.cs" />
+    <EmbeddedResource Include="AddGoalForm.resx">
+      <DependentUpon>AddGoalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUserForm.resx">
       <DependentUpon>NewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveGoalForm.resx">
+      <DependentUpon>RemoveGoalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserHome.resx">
       <DependentUpon>UserHome.cs</DependentUpon>
@@ -142,6 +160,7 @@
   <ItemGroup>
     <Content Include="Login\omega.txt" />
     <Content Include="Login\Profiles.txt" />
+    <None Include="Resources\veryLightSpiralBlue.png" />
     <None Include="Resources\blueSwish.jpg" />
     <None Include="Resources\spiralBlue1.jpg" />
   </ItemGroup>
