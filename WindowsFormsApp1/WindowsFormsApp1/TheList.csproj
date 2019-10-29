@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addGoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addGoalForm.Designer.cs">
+      <DependentUpon>addGoalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Goal.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainForm.cs">
@@ -91,6 +97,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoVal.cs" />
+    <EmbeddedResource Include="addGoalForm.resx">
+      <DependentUpon>addGoalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +151,7 @@
   <ItemGroup>
     <Content Include="Login\omega.txt" />
     <Content Include="Login\Profiles.txt" />
+    <None Include="Resources\veryLightSpiralBlue.png" />
     <None Include="Resources\blueSwish.jpg" />
     <None Include="Resources\spiralBlue1.jpg" />
   </ItemGroup>

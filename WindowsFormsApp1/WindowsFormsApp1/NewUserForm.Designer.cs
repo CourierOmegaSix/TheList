@@ -65,7 +65,7 @@
             // 
             // lNameLabel
             // 
-            this.lNameLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameLabel.Location = new System.Drawing.Point(26, 117);
             this.lNameLabel.Name = "lNameLabel";
             this.lNameLabel.Size = new System.Drawing.Size(143, 39);
@@ -119,11 +119,12 @@
             this.addressBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressBox.Location = new System.Drawing.Point(598, 117);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(166, 23);
+            this.addressBox.Size = new System.Drawing.Size(166, 30);
             this.addressBox.TabIndex = 19;
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(481, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 39);
@@ -147,7 +148,7 @@
             this.zipcodeBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zipcodeBox.Location = new System.Drawing.Point(598, 182);
             this.zipcodeBox.Name = "zipcodeBox";
-            this.zipcodeBox.Size = new System.Drawing.Size(166, 23);
+            this.zipcodeBox.Size = new System.Drawing.Size(166, 30);
             this.zipcodeBox.TabIndex = 17;
             // 
             // submitButton
@@ -163,6 +164,7 @@
             // 
             // zipcodeLabel
             // 
+            this.zipcodeLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zipcodeLabel.Location = new System.Drawing.Point(481, 182);
             this.zipcodeLabel.Name = "zipcodeLabel";
             this.zipcodeLabel.Size = new System.Drawing.Size(107, 39);
@@ -178,7 +180,7 @@
             this.dobBox.MaxDate = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             this.dobBox.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dobBox.Name = "dobBox";
-            this.dobBox.Size = new System.Drawing.Size(140, 23);
+            this.dobBox.Size = new System.Drawing.Size(140, 30);
             this.dobBox.TabIndex = 12;
             this.dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             this.dobBox.ValueChanged += new System.EventHandler(this.dobBox_ValueChanged);
@@ -188,7 +190,7 @@
             this.confirmPassBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassBox.Location = new System.Drawing.Point(598, 247);
             this.confirmPassBox.Name = "confirmPassBox";
-            this.confirmPassBox.Size = new System.Drawing.Size(170, 23);
+            this.confirmPassBox.Size = new System.Drawing.Size(170, 30);
             this.confirmPassBox.TabIndex = 11;
             this.confirmPassBox.UseSystemPasswordChar = true;
             // 
@@ -198,7 +200,7 @@
             this.passwordBox.Location = new System.Drawing.Point(182, 247);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.ReadOnly = true;
-            this.passwordBox.Size = new System.Drawing.Size(182, 23);
+            this.passwordBox.Size = new System.Drawing.Size(182, 30);
             this.passwordBox.TabIndex = 10;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
@@ -208,7 +210,7 @@
             this.usernameBox.Location = new System.Drawing.Point(182, 182);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.ReadOnly = true;
-            this.usernameBox.Size = new System.Drawing.Size(182, 23);
+            this.usernameBox.Size = new System.Drawing.Size(182, 30);
             this.usernameBox.TabIndex = 9;
             this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
@@ -217,7 +219,7 @@
             this.lNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameBox.Location = new System.Drawing.Point(182, 117);
             this.lNameBox.Name = "lNameBox";
-            this.lNameBox.Size = new System.Drawing.Size(182, 23);
+            this.lNameBox.Size = new System.Drawing.Size(182, 30);
             this.lNameBox.TabIndex = 7;
             // 
             // fNameBox
@@ -225,22 +227,23 @@
             this.fNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameBox.Location = new System.Drawing.Point(182, 52);
             this.fNameBox.Name = "fNameBox";
-            this.fNameBox.Size = new System.Drawing.Size(182, 23);
+            this.fNameBox.Size = new System.Drawing.Size(182, 30);
             this.fNameBox.TabIndex = 6;
             this.fNameBox.TextChanged += new System.EventHandler(this.fNameBox_TextChanged);
             // 
             // confirmPassLabel
             // 
-            this.confirmPassLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirmPassLabel.Location = new System.Drawing.Point(390, 247);
+            this.confirmPassLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirmPassLabel.Location = new System.Drawing.Point(368, 247);
             this.confirmPassLabel.Name = "confirmPassLabel";
-            this.confirmPassLabel.Size = new System.Drawing.Size(208, 39);
+            this.confirmPassLabel.Size = new System.Drawing.Size(230, 39);
             this.confirmPassLabel.TabIndex = 5;
             this.confirmPassLabel.Text = "Confirm Password:";
             this.confirmPassLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // passwordLabel
             // 
+            this.passwordLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.Location = new System.Drawing.Point(26, 247);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(143, 39);
@@ -250,6 +253,7 @@
             // 
             // userNameLabel
             // 
+            this.userNameLabel.Font = new System.Drawing.Font("Georgia", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameLabel.Location = new System.Drawing.Point(26, 182);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(143, 39);
@@ -281,9 +285,9 @@
             // 
             // NewUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.spiralBlue;
+            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(971, 665);
             this.Controls.Add(this.welcomeLabel);
