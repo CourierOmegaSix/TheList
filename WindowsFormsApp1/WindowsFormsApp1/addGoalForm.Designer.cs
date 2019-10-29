@@ -46,7 +46,7 @@
             this.usernameLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.Location = new System.Drawing.Point(16, 32);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(94, 29);
+            this.usernameLabel.Size = new System.Drawing.Size(62, 18);
             this.usernameLabel.TabIndex = 5;
             this.usernameLabel.Text = "Name:";
             // 
@@ -72,7 +72,7 @@
             this.goalDescriptionBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goalDescriptionBox.Location = new System.Drawing.Point(16, 264);
             this.goalDescriptionBox.Name = "goalDescriptionBox";
-            this.goalDescriptionBox.Size = new System.Drawing.Size(182, 30);
+            this.goalDescriptionBox.Size = new System.Drawing.Size(182, 23);
             this.goalDescriptionBox.TabIndex = 13;
             // 
             // label2
@@ -81,7 +81,7 @@
             this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 29);
+            this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 12;
             this.label2.Text = "Description:";
             // 
@@ -90,8 +90,9 @@
             this.goalCostBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goalCostBox.Location = new System.Drawing.Point(16, 168);
             this.goalCostBox.Name = "goalCostBox";
-            this.goalCostBox.Size = new System.Drawing.Size(182, 30);
+            this.goalCostBox.Size = new System.Drawing.Size(182, 23);
             this.goalCostBox.TabIndex = 11;
+            this.goalCostBox.TextChanged += new System.EventHandler(this.goalCostBox_TextChanged);
             // 
             // label1
             // 
@@ -99,7 +100,7 @@
             this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 29);
+            this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "Cost:";
             // 
@@ -108,8 +109,9 @@
             this.goalNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.goalNameBox.Location = new System.Drawing.Point(16, 72);
             this.goalNameBox.Name = "goalNameBox";
-            this.goalNameBox.Size = new System.Drawing.Size(182, 30);
+            this.goalNameBox.Size = new System.Drawing.Size(182, 23);
             this.goalNameBox.TabIndex = 9;
+            this.goalNameBox.TextChanged += new System.EventHandler(this.goalNameBox_TextChanged);
             // 
             // cancelButton
             // 
@@ -135,7 +137,7 @@
             // 
             // AddGoalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

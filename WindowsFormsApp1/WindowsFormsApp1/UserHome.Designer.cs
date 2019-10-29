@@ -82,6 +82,7 @@
             this.Cost_ListBox.Name = "Cost_ListBox";
             this.Cost_ListBox.Size = new System.Drawing.Size(120, 388);
             this.Cost_ListBox.TabIndex = 4;
+            this.Cost_ListBox.SelectedIndexChanged += new System.EventHandler(this.Cost_ListBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -156,6 +157,7 @@
             this.AddFunds_Button.TabIndex = 2;
             this.AddFunds_Button.Text = "Add Funds";
             this.AddFunds_Button.UseVisualStyleBackColor = true;
+            this.AddFunds_Button.Click += new System.EventHandler(this.AddFunds_Button_Click);
             // 
             // SpendingFunds_Label
             // 
@@ -165,6 +167,7 @@
             this.SpendingFunds_Label.Name = "SpendingFunds_Label";
             this.SpendingFunds_Label.Size = new System.Drawing.Size(360, 88);
             this.SpendingFunds_Label.TabIndex = 4;
+            this.SpendingFunds_Label.Click += new System.EventHandler(this.SpendingFunds_Label_Click);
             // 
             // label4
             // 
@@ -185,6 +188,7 @@
             this.SaveList_Button.TabIndex = 6;
             this.SaveList_Button.Text = "Save List";
             this.SaveList_Button.UseVisualStyleBackColor = true;
+            this.SaveList_Button.Click += new System.EventHandler(this.SaveList_Button_Click);
             // 
             // LoadList_Button
             // 
@@ -194,6 +198,7 @@
             this.LoadList_Button.TabIndex = 7;
             this.LoadList_Button.Text = "Load List";
             this.LoadList_Button.UseVisualStyleBackColor = true;
+            this.LoadList_Button.Click += new System.EventHandler(this.LoadList_Button_Click);
             // 
             // PrintList_Button
             // 
@@ -203,6 +208,7 @@
             this.PrintList_Button.TabIndex = 8;
             this.PrintList_Button.Text = "Print List";
             this.PrintList_Button.UseVisualStyleBackColor = true;
+            this.PrintList_Button.Click += new System.EventHandler(this.PrintList_Button_Click);
             // 
             // UserHome
             // 
