@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
             int size = User.Goals.Count;
             for (int i = 0; i < size; i++){
                 Goal_ListBox.Items.Add(User.Goals.ElementAt(i).GoalName);
-                Cost_ListBox.Items.Add(User.Goals.ElementAt(i).EstimatedGoalCost + "$");
+                Cost_ListBox.Items.Add("$" + User.Goals.ElementAt(i).EstimatedGoalCost);
             }
             
         }

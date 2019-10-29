@@ -1,1 +1,1 @@
-{"userInformation":{"firstName":"Kayla","lastName":"Jordan","address":"123 testing ln","zipCode":"71111","dateOfBirth":"11/8/1987 12:00:00 AM"},"goals":null,"spendingFunds":0.00}
+{"userInformation":{"firstName":"Kayla","lastName":"Jordan","address":"123 Testing ln","zipCode":"71111","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":0.00}
