@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
                 return this.userInformation;
             }
         }
-        public LinkedList<Goal> Goals { get; }
+        public LinkedList<Goal> Goals { get; set; }
         public decimal SpendingFunds
         {
             get

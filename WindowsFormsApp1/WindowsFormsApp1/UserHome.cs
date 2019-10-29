@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -24,7 +25,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             User = user;
-            Console.WriteLine(User.UserInformation["firstName"]);
+            RefreshBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,11 +91,24 @@ namespace WindowsFormsApp1
             //loops through the User.Goals linked array and adds each element to the list boxes(JE)
             Goal_ListBox.Items.Clear();
             Cost_ListBox.Items.Clear();
+
+            // Sorting of the list (CK)
+            List<Goal> temp = User.Goals.ToList();
+            temp.Sort();
+            User.Goals.Clear();
+
+            foreach(Goal g in temp)
+            {
+                User.Goals.AddLast(g);
+            }
+
             int size = User.Goals.Count;
             for (int i = 0; i < size; i++){
                 Goal_ListBox.Items.Add(User.Goals.ElementAt(i).GoalName);
-                Cost_ListBox.Items.Add("$" + User.Goals.ElementAt(i).EstimatedGoalCost);
+                Cost_ListBox.Items.Add("$" + User.Goals.ElementAt(i).EstimatedGoalCost.ToString("0.00"));
             }
+
+            SpendingFunds_Label.Text = "$" + User.SpendingFunds.ToString();
             
         }
 

@@ -76,11 +76,12 @@
             // 
             // Cost_ListBox
             // 
+            this.Cost_ListBox.Font = new System.Drawing.Font("Georgia", 18F);
             this.Cost_ListBox.FormattingEnabled = true;
-            this.Cost_ListBox.ItemHeight = 16;
+            this.Cost_ListBox.ItemHeight = 29;
             this.Cost_ListBox.Location = new System.Drawing.Point(200, 32);
             this.Cost_ListBox.Name = "Cost_ListBox";
-            this.Cost_ListBox.Size = new System.Drawing.Size(120, 388);
+            this.Cost_ListBox.Size = new System.Drawing.Size(120, 381);
             this.Cost_ListBox.TabIndex = 4;
             this.Cost_ListBox.SelectedIndexChanged += new System.EventHandler(this.Cost_ListBox_SelectedIndexChanged);
             // 
@@ -97,11 +98,12 @@
             // 
             // Goal_ListBox
             // 
+            this.Goal_ListBox.Font = new System.Drawing.Font("Georgia", 18F);
             this.Goal_ListBox.FormattingEnabled = true;
-            this.Goal_ListBox.ItemHeight = 16;
+            this.Goal_ListBox.ItemHeight = 29;
             this.Goal_ListBox.Location = new System.Drawing.Point(0, 32);
             this.Goal_ListBox.Name = "Goal_ListBox";
-            this.Goal_ListBox.Size = new System.Drawing.Size(200, 388);
+            this.Goal_ListBox.Size = new System.Drawing.Size(200, 381);
             this.Goal_ListBox.TabIndex = 3;
             this.Goal_ListBox.SelectedIndexChanged += new System.EventHandler(this.Goal_ListBox_SelectedIndexChanged);
             // 
@@ -162,11 +164,13 @@
             // SpendingFunds_Label
             // 
             this.SpendingFunds_Label.BackColor = System.Drawing.Color.White;
+            this.SpendingFunds_Label.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SpendingFunds_Label.Location = new System.Drawing.Point(0, 40);
             this.SpendingFunds_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SpendingFunds_Label.Name = "SpendingFunds_Label";
             this.SpendingFunds_Label.Size = new System.Drawing.Size(360, 88);
             this.SpendingFunds_Label.TabIndex = 4;
+            this.SpendingFunds_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SpendingFunds_Label.Click += new System.EventHandler(this.SpendingFunds_Label_Click);
             // 
             // label4
