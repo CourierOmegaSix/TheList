@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class addGoalForm
+    partial class AddGoalForm
     {
         /// <summary>
         /// Required designer variable.

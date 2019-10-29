@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class AddGoalForm : Form
+    public partial class RemoveGoalForm : Form
     {
-        public AddGoalForm()
+        public RemoveGoalForm()
         {
             InitializeComponent();
         }

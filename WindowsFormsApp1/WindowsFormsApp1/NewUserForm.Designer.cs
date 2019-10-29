@@ -294,6 +294,8 @@
             this.Controls.Add(this.userInstructionLabel);
             this.Controls.Add(this.newUserInfoGroup);
             this.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewUserForm";
             this.Text = "New Profile";
             this.newUserInfoGroup.ResumeLayout(false);
