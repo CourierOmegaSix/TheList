@@ -49,6 +49,10 @@ namespace WindowsFormsApp1
             Goal g = new Goal(name, p);
             this.Goals.AddLast(g);
         }
+        public void AddGoalList(Goal g)
+        {
+            Goals.AddFirst(g);
+        }
         //method used to remove a goal, used in RemoveGoalForm(JE)
         public void RemoveGoal(Goal index)
         {

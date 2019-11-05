@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace WindowsFormsApp1
     public partial class UserHome : Form
     {
         private User user;
+        Login login;
         public User User 
         {
             get
@@ -91,12 +93,14 @@ namespace WindowsFormsApp1
 
         private void LoadList_Button_Click(object sender, EventArgs e)
         {
-
+            Login.loadList(User);
+            RefreshBox();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
         {
-
+            Login.saveList(User.Goals);
+            RefreshBox();
         }
 
         private void AddFunds_Button_Click(object sender, EventArgs e)

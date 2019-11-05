@@ -1,0 +1,1 @@
+[{"GoalName":"goal1","EstimatedGoalCost":200.0,"OptionalGoalDescription":"adasd"},{"GoalName":"goal 2","EstimatedGoalCost":333.0,"OptionalGoalDescription":"asdad"}]
