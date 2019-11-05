@@ -36,21 +36,6 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void UserHome_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Goal_ListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AddGoal_Button_Click(object sender, EventArgs e)
         {
 
@@ -114,16 +99,6 @@ namespace WindowsFormsApp1
 
             SpendingFunds_Label.Text = "$" + User.SpendingFunds.ToString();
             
-        }
-
-        private void SpendingFunds_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cost_ListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
