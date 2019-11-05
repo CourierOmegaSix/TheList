@@ -158,8 +158,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Login\jesse.txt" />
+    <Content Include="Login\kayla.txt" />
     <Content Include="Login\omega.txt" />
     <Content Include="Login\Profiles.txt" />
+    <Content Include="Login\test.txt" />
     <None Include="Resources\veryLightSpiralBlue.png" />
     <None Include="Resources\blueSwish.jpg" />
     <None Include="Resources\spiralBlue1.jpg" />

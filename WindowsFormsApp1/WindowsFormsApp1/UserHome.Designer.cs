@@ -81,6 +81,7 @@
             this.Cost_ListBox.ItemHeight = 29;
             this.Cost_ListBox.Location = new System.Drawing.Point(200, 32);
             this.Cost_ListBox.Name = "Cost_ListBox";
+            this.Cost_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.Cost_ListBox.Size = new System.Drawing.Size(120, 381);
             this.Cost_ListBox.TabIndex = 4;
             // 

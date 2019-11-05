@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace WindowsFormsApp1
     public partial class UserHome : Form
     {
         private User user;
+        Login login;
         public User User 
         {
             get
@@ -49,10 +51,23 @@ namespace WindowsFormsApp1
 
         private void RemoveGoal_Button_Click(object sender, EventArgs e)
         {
-            RemoveGoalForm RemoveGoal = new RemoveGoalForm();
-            RemoveGoal.ShowDialog();
+            //if an item is selxted in the list box(Je)
+            if (Goal_ListBox.SelectedIndex != -1) {
 
-            RefreshBox();
+                //g is set as the goal object that was selected
+                Goal g = User.Goals.ElementAt(Goal_ListBox.SelectedIndex);
+
+                //opens remove goal winform and passes the user and g into it
+                RemoveGoalForm RemoveGoal = new RemoveGoalForm(User,g);
+                RemoveGoal.ShowDialog();
+
+
+                RefreshBox();
+            }
+            else
+            {
+                MessageBox.Show("Must selected a goal to remove. ", "Error");
+            }
 
         }
 
@@ -63,12 +78,14 @@ namespace WindowsFormsApp1
 
         private void LoadList_Button_Click(object sender, EventArgs e)
         {
-
+            Login.loadList(User);
+            RefreshBox();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
         {
-
+            Login.saveList(User.Goals);
+            RefreshBox();
         }
 
         private void AddFunds_Button_Click(object sender, EventArgs e)
@@ -99,6 +116,16 @@ namespace WindowsFormsApp1
 
             SpendingFunds_Label.Text = "$" + User.SpendingFunds.ToString();
             
+        }
+
+        private void SpendingFunds_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cost_ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
