@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 using System.Web;
 
@@ -9,8 +10,10 @@ namespace WindowsFormsApp1
     public class Login
     {
 
-        //path to Profiles.txt (JE)
+        //path to Profiles text files (JE)
         private static string  path = (@"../../Login/Profiles.txt");
+
+        //path to list path files
         private static string lpath = (@"../../Login/");
 
 
@@ -52,47 +55,65 @@ namespace WindowsFormsApp1
             return false ;
         }
 
-        public static void saveList(LinkedList<Goal> g)
+        //name is returned from SaveList form, which will be the file name(JE)
+        public static void saveList(User u, string name)
         {
-            string name = lpath + "test.txt";
+            //Designated foler the saved lists will be stored(JE)
+            string folderpath = lpath + u.UserInformation["firstName"] + "Lists";
 
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(g);
+            //Naming the list file based on user input(JE)
+            string filepath = folderpath + "/" + name + ".txt";
 
-            using (var tw = new StreamWriter(name, true))
+            //if folder doesn't exist it will create it(JE)
+            if (Directory.Exists(folderpath))
             {
-                tw.WriteLine(json.ToString());
-                tw.Close();
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
+                using (var tw = new StreamWriter(filepath, true))
+                {
+                    tw.WriteLine(json.ToString());
+                    tw.Close();
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(folderpath);
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
+                using (var tw = new StreamWriter(filepath, true))
+                {
+                    tw.WriteLine(json.ToString());
+                    tw.Close();
+                }
             }
 
         }
-        public static void loadList(User u)
+        //file name is returned from loadList, which is the name of the txt file the user selected(JE)
+        public static void loadList(User u, string fileName)
         {
-            string finalpath = lpath + "test.txt";
+            //a temp linked list that will be used to override the users,(basically reseting the users Goals linked list)(JE)
+            LinkedList<Goal> temp = new LinkedList<Goal>();
+
+            string folderpath = lpath + u.UserInformation["firstName"] + "Lists";
+            string finalpath = folderpath + "/" + fileName;
             if (File.Exists(finalpath))
             {
                 StreamReader reader = File.OpenText(finalpath);
                 List<Goal> objects;
                 objects = JsonConvert.DeserializeObject<List<Goal>>(reader.ReadLine());
-
-                foreach(Goal l in objects){
-                    Console.WriteLine(l.GoalName);
-                    u.AddGoalList(l);
-                }
                 reader.Close();
-                //while((line = reader.ReadLine()) != null)
-                //{
-                //    string[] split = line.Split('z');
-                //    for (int i = 0; i < split.Length; i++)
-                //    {
-                        
-                //        dynamic obj1 = Newtonsoft.Json.JsonConvert.DeserializeObject(split[i]);
-                //        Goal gg = obj1 as Goal;
-                //        Console.WriteLine(gg.GoalName);
-                //        u.AddGoalList(gg);
 
-                //    }
-                //}
+                foreach (Goal l in objects)
+                {
+                    Console.WriteLine(l.GoalName);
+                    temp.AddLast(l);
 
+                }
+                u.Goals = temp;
+
+            }
+            else
+            {
+                //should always be working(JE)
+                Console.WriteLine("FILE DOES NNOT EXISTST!!!");
             }
 
 

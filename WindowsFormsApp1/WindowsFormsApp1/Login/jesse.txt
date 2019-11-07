@@ -1,1 +1,1 @@
-{"userInformation":{"firstName":"asdf","lastName":"sdf","address":"asdf","zipCode":"asdf","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":0.00}
+{"userInformation":{"firstName":"Jesse","lastName":"sdf","address":"asdf","zipCode":"asdf","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":0.00}

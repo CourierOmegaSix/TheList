@@ -9,7 +9,6 @@ namespace WindowsFormsApp1
     public partial class UserHome : Form
     {
         private User user;
-        Login login;
         public User User 
         {
             get
@@ -66,13 +65,13 @@ namespace WindowsFormsApp1
 
         private void RemoveGoal_Button_Click(object sender, EventArgs e)
         {
-            //if an item is selxted in the list box(Je)
+            //if an item is selxted in the list box(JE)
             if (Goal_ListBox.SelectedIndex != -1) {
 
-                //g is set as the goal object that was selected
+                //g is set as the goal object that was selected(JE)
                 Goal g = User.Goals.ElementAt(Goal_ListBox.SelectedIndex);
 
-                //opens remove goal winform and passes the user and g into it
+                //opens remove goal winform and passes the user and g into it(JE)
                 RemoveGoalForm RemoveGoal = new RemoveGoalForm(User,g);
                 RemoveGoal.ShowDialog();
 
@@ -93,13 +92,17 @@ namespace WindowsFormsApp1
 
         private void LoadList_Button_Click(object sender, EventArgs e)
         {
-            Login.loadList(User);
+            LoadList loadlist = new LoadList(User);
+            loadlist.ShowDialog();
+
             RefreshBox();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
         {
-            Login.saveList(User.Goals);
+            SaveList savelist = new SaveList(User);
+            savelist.ShowDialog();
+
             RefreshBox();
         }
 
