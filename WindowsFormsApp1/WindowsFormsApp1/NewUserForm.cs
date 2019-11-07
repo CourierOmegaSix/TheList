@@ -65,25 +65,5 @@ namespace WindowsFormsApp1
             dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
 
         }
-
-        private void dobBox_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void newUserInfoGroup_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usernameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fNameBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

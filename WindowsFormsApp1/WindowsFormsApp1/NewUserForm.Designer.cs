@@ -112,7 +112,6 @@
             this.newUserInfoGroup.TabIndex = 3;
             this.newUserInfoGroup.TabStop = false;
             this.newUserInfoGroup.Text = "Create Profile";
-            this.newUserInfoGroup.Enter += new System.EventHandler(this.newUserInfoGroup_Enter);
             // 
             // addressBox
             // 
@@ -183,7 +182,6 @@
             this.dobBox.Size = new System.Drawing.Size(140, 30);
             this.dobBox.TabIndex = 12;
             this.dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
-            this.dobBox.ValueChanged += new System.EventHandler(this.dobBox_ValueChanged);
             // 
             // confirmPassBox
             // 
@@ -212,7 +210,6 @@
             this.usernameBox.ReadOnly = true;
             this.usernameBox.Size = new System.Drawing.Size(182, 30);
             this.usernameBox.TabIndex = 9;
-            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // lNameBox
             // 
@@ -229,7 +226,6 @@
             this.fNameBox.Name = "fNameBox";
             this.fNameBox.Size = new System.Drawing.Size(182, 30);
             this.fNameBox.TabIndex = 6;
-            this.fNameBox.TextChanged += new System.EventHandler(this.fNameBox_TextChanged);
             // 
             // confirmPassLabel
             // 

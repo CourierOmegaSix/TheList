@@ -67,7 +67,6 @@
             this.usrName.Name = "usrName";
             this.usrName.Size = new System.Drawing.Size(168, 26);
             this.usrName.TabIndex = 2;
-            this.usrName.TextChanged += new System.EventHandler(this.UsrName_TextChanged);
             // 
             // pass
             // 
@@ -76,7 +75,6 @@
             this.pass.Size = new System.Drawing.Size(168, 26);
             this.pass.TabIndex = 3;
             this.pass.UseSystemPasswordChar = true;
-            this.pass.TextChanged += new System.EventHandler(this.Pass_TextChanged);
             // 
             // infoGroup
             // 
@@ -94,7 +92,6 @@
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
-            this.infoGroup.Enter += new System.EventHandler(this.infoGroup_Enter);
             // 
             // passwordLabel
             // 
@@ -134,7 +131,6 @@
             this.Name = "UserInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Budget List";
-            this.Load += new System.EventHandler(this.UserInfo_Load);
             this.infoGroup.ResumeLayout(false);
             this.infoGroup.PerformLayout();
             this.ResumeLayout(false);

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
@@ -79,28 +79,6 @@ namespace WindowsFormsApp1
                 userJoin.ShowDialog();
                 this.Close();
             }
-                
-        }
-        
-
-        private void UserInfo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UsrName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void infoGroup_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
