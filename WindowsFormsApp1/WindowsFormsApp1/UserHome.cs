@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
@@ -72,7 +78,26 @@ namespace WindowsFormsApp1
 
         private void PrintList_Button_Click(object sender, EventArgs e)
         {
+            LinkedList<Goal> toPrint = User.GetPossibleGoals();
 
+            Document document = new Document(PageSize.A4, 25, 25, 30, 30);
+            FileStream fileStream = new FileStream(@"../../Lists/" + User.UserInformation["firstName"] + ".pdf", FileMode.Create);
+
+            PdfWriter writer = PdfWriter.GetInstance(document, fileStream);
+            document.Open();
+
+            document.Add(new Paragraph("Optimized List - " + DateTime.Today));
+
+            foreach(Goal g in toPrint)
+            {
+                document.Add(new Paragraph(g.ToString() + " [Amount Spent]: _______________"));
+            }
+
+            document.Close();
+            writer.Close();
+            fileStream.Close();
+
+            MessageBox.Show("Printed!");
         }
 
         private void LoadList_Button_Click(object sender, EventArgs e)

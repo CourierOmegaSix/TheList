@@ -58,5 +58,22 @@ namespace WindowsFormsApp1
         {
             Goals.Remove(index);  
         }
+
+        public LinkedList<Goal> GetPossibleGoals()
+        {
+            LinkedList<Goal> possibleGoals = new LinkedList<Goal>();
+            decimal fundsToWorkWith = SpendingFunds;
+
+            foreach(Goal g in this.Goals)
+            {
+                if(g.EstimatedGoalCost <= fundsToWorkWith)
+                {
+                    fundsToWorkWith -= g.EstimatedGoalCost;
+                    possibleGoals.AddLast(g);
+                }
+            }
+
+            return possibleGoals;
+        }
     }
 }

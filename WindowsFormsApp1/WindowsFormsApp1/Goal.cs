@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace WindowsFormsApp1
 {
@@ -37,6 +38,12 @@ namespace WindowsFormsApp1
             {
                 return 1;
             }
+        }
+
+        public override string ToString()
+        {
+            string s = "[Goal]: " + GoalName + " [Est. Cost]: " + EstimatedGoalCost;
+            return s;
         }
     }
 }
