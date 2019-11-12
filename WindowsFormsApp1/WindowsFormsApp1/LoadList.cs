@@ -14,11 +14,13 @@ namespace WindowsFormsApp1
     public partial class LoadList : Form
     {
         User user;
+
         public LoadList(User use)
         {
             InitializeComponent();
             user = use;
             populateList();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,19 +37,21 @@ namespace WindowsFormsApp1
         {
             Console.WriteLine(listBox1.SelectedItem.ToString());
 
-            Login.loadList(user, listBox1.SelectedItem.ToString());
+            //Adds the .txt back into the selected List items, then passed into the method(JE)
+            Login.loadList(user, (listBox1.SelectedItem.ToString() + ".txt"));
             this.Close();
         }
         private void populateList()
         {
             string folderpath = @"../../Login/" + user.UserInformation["firstName"] + "Lists";
+
             DirectoryInfo folder = new DirectoryInfo(folderpath);
             FileInfo[] nameArray = folder.GetFiles();
-            //string[] nameArray = Directory.GetFiles(folderpath);
 
             foreach(FileInfo file in nameArray)
             {
-                listBox1.Items.Add(file.Name);
+                //removes the path and file extension from the List .txt file(JE)
+                listBox1.Items.Add(Path.GetFileNameWithoutExtension(file.Name));
             }
 
         }
