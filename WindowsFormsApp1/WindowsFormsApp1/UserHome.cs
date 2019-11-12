@@ -77,16 +77,31 @@ namespace WindowsFormsApp1
 
         private void LoadList_Button_Click(object sender, EventArgs e)
         {
-            LoadList loadlist = new LoadList(User);
-            loadlist.ShowDialog();
-
+            string folderpath = @"../../Login/" + user.UserInformation["firstName"] + "Lists";
+            if (Directory.Exists(folderpath))
+            {
+                LoadList loadlist = new LoadList(User);
+                loadlist.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No lists to load");
+            }
             RefreshBox();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
         {
-            SaveList savelist = new SaveList(User);
-            savelist.ShowDialog();
+            if (Goal_ListBox.Items.Count > 0)
+            {
+                SaveList savelist = new SaveList(User);
+                savelist.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You must have a list to save.");
+            }
+            
 
             RefreshBox();
         }

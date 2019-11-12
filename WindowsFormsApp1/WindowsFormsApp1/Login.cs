@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.IO;
 using System.Web;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -67,11 +68,20 @@ namespace WindowsFormsApp1
             //if folder doesn't exist it will create it(JE)
             if (Directory.Exists(folderpath))
             {
-                string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
-                using (var tw = new StreamWriter(filepath, true))
+                //if file path doesn't exist(JE)
+                if (!File.Exists(filepath))
                 {
-                    tw.WriteLine(json.ToString());
-                    tw.Close();
+                    string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
+                    using (var tw = new StreamWriter(filepath, true))
+                    {
+                        tw.WriteLine(json.ToString());
+                        tw.Close();
+                    }
+                }
+                //if there is already a list with the name the user entered(JE)
+                else
+                {
+                    MessageBox.Show("File name already exist.");
                 }
             }
             else
