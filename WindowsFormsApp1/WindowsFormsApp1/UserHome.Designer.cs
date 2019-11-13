@@ -148,6 +148,7 @@
             this.RemoveFunds_Button.TabIndex = 5;
             this.RemoveFunds_Button.Text = "Remove Funds";
             this.RemoveFunds_Button.UseVisualStyleBackColor = true;
+            this.RemoveFunds_Button.Click += new System.EventHandler(this.RemoveFunds_Button_Click);
             // 
             // AddFunds_Button
             // 

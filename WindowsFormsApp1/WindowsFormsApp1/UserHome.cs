@@ -133,7 +133,9 @@ namespace WindowsFormsApp1
 
         private void AddFunds_Button_Click(object sender, EventArgs e)
         {
-
+            AddFunds addFunds = new AddFunds(User);
+            addFunds.ShowDialog();
+            RefreshBox();
         }
         private void RefreshBox()
         {
@@ -169,6 +171,13 @@ namespace WindowsFormsApp1
         private void Cost_ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RemoveFunds_Button_Click(object sender, EventArgs e)
+        {
+            RemoveFunds removeFunds = new RemoveFunds(User);
+            removeFunds.ShowDialog();
+            RefreshBox();
         }
     }
 }

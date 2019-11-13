@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
 
             set
             {
-                this.spendingFunds = this.spendingFunds + value;
+                this.spendingFunds = value;
             }
         }
 
