@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
     public partial class UserHome : Form
     {
         private User user;
+        private Boolean changes = false;
         public User User 
         {
             get
@@ -32,6 +33,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             User = user;
+
             RefreshBox();
         }
 
@@ -49,6 +51,7 @@ namespace WindowsFormsApp1
             //pulls up the AddGoalForm(JE)
             AddGoalForm AddGoalForm = new AddGoalForm(User);
             AddGoalForm.ShowDialog();
+            changes = true;
 
             RefreshBox();
 
@@ -66,7 +69,7 @@ namespace WindowsFormsApp1
                 RemoveGoalForm RemoveGoal = new RemoveGoalForm(User,g);
                 RemoveGoal.ShowDialog();
 
-
+                changes = true;
                 RefreshBox();
             }
             else
@@ -102,32 +105,33 @@ namespace WindowsFormsApp1
 
         private void LoadList_Button_Click(object sender, EventArgs e)
         {
-            string folderpath = @"../../Login/" + user.UserInformation["firstName"] + "Lists";
-            if (Directory.Exists(folderpath))
+            if (changes == false)
             {
-                LoadList loadlist = new LoadList(User);
-                loadlist.ShowDialog();
+                Login.loadList(user);
             }
             else
             {
-                MessageBox.Show("No lists to load");
+                string message = "You have unsaved changes, are you sure you want to load old version?";
+                MessageBoxButtons check = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, "", check);
+                if(result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Login.loadList(user);
+                    changes = false;
+                    
+                    
+                }
             }
             RefreshBox();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
         {
-            if (Goal_ListBox.Items.Count > 0)
-            {
-                SaveList savelist = new SaveList(User);
-                savelist.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("You must have a list to save.");
-            }
-            
+            Login.saveList(user);
 
+            changes = false;
             RefreshBox();
         }
 
@@ -178,6 +182,26 @@ namespace WindowsFormsApp1
             RemoveFunds removeFunds = new RemoveFunds(User);
             removeFunds.ShowDialog();
             RefreshBox();
+        }
+
+        private void Goal_ListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserHome_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cost_ListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpendingFunds_Label_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

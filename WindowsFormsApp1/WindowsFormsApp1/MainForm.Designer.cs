@@ -41,10 +41,9 @@
             // signInButton
             // 
             this.signInButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signInButton.Location = new System.Drawing.Point(72, 248);
-            this.signInButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.signInButton.Location = new System.Drawing.Point(48, 161);
             this.signInButton.Name = "signInButton";
-            this.signInButton.Size = new System.Drawing.Size(104, 56);
+            this.signInButton.Size = new System.Drawing.Size(69, 36);
             this.signInButton.TabIndex = 0;
             this.signInButton.Text = "Sign In";
             this.signInButton.UseVisualStyleBackColor = true;
@@ -53,9 +52,10 @@
             // joinButton
             // 
             this.joinButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joinButton.Location = new System.Drawing.Point(264, 248);
+            this.joinButton.Location = new System.Drawing.Point(176, 161);
+            this.joinButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.joinButton.Name = "joinButton";
-            this.joinButton.Size = new System.Drawing.Size(104, 56);
+            this.joinButton.Size = new System.Drawing.Size(69, 36);
             this.joinButton.TabIndex = 1;
             this.joinButton.Text = "Join";
             this.joinButton.UseVisualStyleBackColor = true;
@@ -63,16 +63,18 @@
             // 
             // usrName
             // 
-            this.usrName.Location = new System.Drawing.Point(208, 64);
+            this.usrName.Location = new System.Drawing.Point(139, 42);
+            this.usrName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usrName.Name = "usrName";
-            this.usrName.Size = new System.Drawing.Size(168, 26);
+            this.usrName.Size = new System.Drawing.Size(113, 20);
             this.usrName.TabIndex = 2;
             // 
             // pass
             // 
-            this.pass.Location = new System.Drawing.Point(208, 144);
+            this.pass.Location = new System.Drawing.Point(139, 94);
+            this.pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(168, 26);
+            this.pass.Size = new System.Drawing.Size(113, 20);
             this.pass.TabIndex = 3;
             this.pass.UseSystemPasswordChar = true;
             // 
@@ -86,20 +88,24 @@
             this.infoGroup.Controls.Add(this.joinButton);
             this.infoGroup.Controls.Add(this.pass);
             this.infoGroup.ForeColor = System.Drawing.Color.Black;
-            this.infoGroup.Location = new System.Drawing.Point(40, 32);
+            this.infoGroup.Location = new System.Drawing.Point(27, 21);
+            this.infoGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.infoGroup.Name = "infoGroup";
-            this.infoGroup.Size = new System.Drawing.Size(480, 368);
+            this.infoGroup.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.infoGroup.Size = new System.Drawing.Size(320, 239);
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
+            this.infoGroup.Enter += new System.EventHandler(this.infoGroup_Enter);
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(56, 144);
+            this.passwordLabel.Location = new System.Drawing.Point(37, 94);
+            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(132, 29);
+            this.passwordLabel.Size = new System.Drawing.Size(87, 18);
             this.passwordLabel.TabIndex = 5;
             this.passwordLabel.Text = "Password";
             // 
@@ -107,25 +113,25 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(48, 64);
+            this.usernameLabel.Location = new System.Drawing.Point(32, 42);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(140, 29);
+            this.usernameLabel.Size = new System.Drawing.Size(92, 18);
             this.usernameLabel.TabIndex = 4;
             this.usernameLabel.Text = "Username";
             // 
             // UserInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(566, 440);
+            this.ClientSize = new System.Drawing.Size(377, 286);
             this.Controls.Add(this.infoGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.Location = new System.Drawing.Point(100, 100);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserInfo";

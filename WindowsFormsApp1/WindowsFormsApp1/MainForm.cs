@@ -80,5 +80,10 @@ namespace WindowsFormsApp1
                 this.Close();
             }
         }
+
+        private void infoGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

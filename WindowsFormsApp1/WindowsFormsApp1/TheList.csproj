@@ -88,18 +88,6 @@
     <Compile Include="RemoveFunds.Designer.cs">
       <DependentUpon>RemoveFunds.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SaveList.Designer.cs">
-      <DependentUpon>SaveList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoadList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoadList.Designer.cs">
-      <DependentUpon>LoadList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Goal.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MainForm.cs">
@@ -136,9 +124,6 @@
     <EmbeddedResource Include="AddGoalForm.resx">
       <DependentUpon>AddGoalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadList.resx">
-      <DependentUpon>LoadList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RemoveGoalForm.resx">
       <DependentUpon>RemoveGoalForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaveList.resx">
-      <DependentUpon>SaveList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserHome.resx">
       <DependentUpon>UserHome.cs</DependentUpon>
@@ -197,11 +179,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Login\jesse.txt" />
-    <Content Include="Login\kayla.txt" />
-    <Content Include="Login\omega.txt" />
     <Content Include="Login\Profiles.txt" />
-    <Content Include="Login\test.txt" />
     <None Include="Resources\veryLightSpiralBlue.png" />
     <None Include="Resources\blueSwish.jpg" />
     <None Include="Resources\spiralBlue1.jpg" />

@@ -22,9 +22,10 @@ namespace WindowsFormsApp1
         private void SubmitButton_Click(object sender, EventArgs e)
         {
 
-            String fName, lName, address, confirmPass, zipCode;
+            String fName, lName, address, confirmPass, zipCode, userN;
             DateTime dob;
 
+            userN = userName;
             fName = fNameBox.Text;
             lName = lNameBox.Text;
             address = addressBox.Text;
@@ -34,6 +35,7 @@ namespace WindowsFormsApp1
 
             // User creation (CK)
             User user = new User();
+            user.UserInformation.Add("userName", userN);
             user.UserInformation.Add("firstName", fName);
             user.UserInformation.Add("lastName", lName);
             user.UserInformation.Add("address", address);
@@ -63,6 +65,11 @@ namespace WindowsFormsApp1
             confirmPassBox.Text = "";
             zipcodeBox.Text = "";
             dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
+
+        }
+
+        private void newUserInfoGroup_Enter(object sender, EventArgs e)
+        {
 
         }
     }

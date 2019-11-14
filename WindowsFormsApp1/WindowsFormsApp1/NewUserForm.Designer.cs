@@ -112,13 +112,14 @@
             this.newUserInfoGroup.TabIndex = 3;
             this.newUserInfoGroup.TabStop = false;
             this.newUserInfoGroup.Text = "Create Profile";
+            this.newUserInfoGroup.Enter += new System.EventHandler(this.newUserInfoGroup_Enter);
             // 
             // addressBox
             // 
             this.addressBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressBox.Location = new System.Drawing.Point(598, 117);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(166, 30);
+            this.addressBox.Size = new System.Drawing.Size(166, 23);
             this.addressBox.TabIndex = 19;
             // 
             // label1
@@ -147,7 +148,7 @@
             this.zipcodeBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zipcodeBox.Location = new System.Drawing.Point(598, 182);
             this.zipcodeBox.Name = "zipcodeBox";
-            this.zipcodeBox.Size = new System.Drawing.Size(166, 30);
+            this.zipcodeBox.Size = new System.Drawing.Size(166, 23);
             this.zipcodeBox.TabIndex = 17;
             // 
             // submitButton
@@ -179,7 +180,7 @@
             this.dobBox.MaxDate = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             this.dobBox.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dobBox.Name = "dobBox";
-            this.dobBox.Size = new System.Drawing.Size(140, 30);
+            this.dobBox.Size = new System.Drawing.Size(140, 23);
             this.dobBox.TabIndex = 12;
             this.dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             // 
@@ -188,7 +189,7 @@
             this.confirmPassBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassBox.Location = new System.Drawing.Point(598, 247);
             this.confirmPassBox.Name = "confirmPassBox";
-            this.confirmPassBox.Size = new System.Drawing.Size(170, 30);
+            this.confirmPassBox.Size = new System.Drawing.Size(170, 23);
             this.confirmPassBox.TabIndex = 11;
             this.confirmPassBox.UseSystemPasswordChar = true;
             // 
@@ -198,7 +199,7 @@
             this.passwordBox.Location = new System.Drawing.Point(182, 247);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.ReadOnly = true;
-            this.passwordBox.Size = new System.Drawing.Size(182, 30);
+            this.passwordBox.Size = new System.Drawing.Size(182, 23);
             this.passwordBox.TabIndex = 10;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
@@ -208,7 +209,7 @@
             this.usernameBox.Location = new System.Drawing.Point(182, 182);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.ReadOnly = true;
-            this.usernameBox.Size = new System.Drawing.Size(182, 30);
+            this.usernameBox.Size = new System.Drawing.Size(182, 23);
             this.usernameBox.TabIndex = 9;
             // 
             // lNameBox
@@ -216,7 +217,7 @@
             this.lNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameBox.Location = new System.Drawing.Point(182, 117);
             this.lNameBox.Name = "lNameBox";
-            this.lNameBox.Size = new System.Drawing.Size(182, 30);
+            this.lNameBox.Size = new System.Drawing.Size(182, 23);
             this.lNameBox.TabIndex = 7;
             // 
             // fNameBox
@@ -224,7 +225,7 @@
             this.fNameBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameBox.Location = new System.Drawing.Point(182, 52);
             this.fNameBox.Name = "fNameBox";
-            this.fNameBox.Size = new System.Drawing.Size(182, 30);
+            this.fNameBox.Size = new System.Drawing.Size(182, 23);
             this.fNameBox.TabIndex = 6;
             // 
             // confirmPassLabel
@@ -281,7 +282,7 @@
             // 
             // NewUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

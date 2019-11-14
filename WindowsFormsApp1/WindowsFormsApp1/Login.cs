@@ -56,77 +56,86 @@ namespace WindowsFormsApp1
             return false ;
         }
 
-        //name is returned from SaveList form, which will be the file name(JE)
-        public static void saveList(User u, string name)
+        public static void saveList(User u)
         {
-            //Designated foler the saved lists will be stored(JE)
-            string folderpath = lpath + u.UserInformation["firstName"] + "Lists";
+            string userpath = (@"../../Login/" + u.UserInformation["userName"] + ".txt");
+            string filepath = lpath + u.UserInformation["firstName"] + "Lists" + ".txt";
 
-            //Naming the list file based on user input(JE)
-            string filepath = folderpath + "/" + name + ".txt";
-
-            //if folder doesn't exist it will create it(JE)
-            if (Directory.Exists(folderpath))
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
+            string json2 = Newtonsoft.Json.JsonConvert.SerializeObject(u);
+            if (!File.Exists(filepath))
             {
-                //if file path doesn't exist(JE)
-                if (!File.Exists(filepath))
-                {
-                    string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
-                    using (var tw = new StreamWriter(filepath, true))
-                    {
-                        tw.WriteLine(json.ToString());
-                        tw.Close();
-                    }
-                }
-                //if there is already a list with the name the user entered(JE)
-                else
-                {
-                    MessageBox.Show("File name already exist.");
-                }
+                var tw = new StreamWriter(filepath, false);
+
+                tw.WriteLine(json.ToString());
+                tw.Close();
+
+                tw = new StreamWriter(userpath, false);
+
+                tw.WriteLine(json2.ToString());
+                tw.Close();
+
             }
             else
             {
-                Directory.CreateDirectory(folderpath);
-                string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
-                using (var tw = new StreamWriter(filepath, true))
-                {
-                    tw.WriteLine(json.ToString());
-                    tw.Close();
-                }
+
+                var tw = new StreamWriter(filepath, false);
+
+                tw.WriteLine(json.ToString());
+                tw.Close();
+
+                tw = new StreamWriter(userpath, false);
+
+                tw.WriteLine(json2.ToString());
+                tw.Close();
+                
             }
 
         }
+
+
         //file name is returned from loadList, which is the name of the txt file the user selected(JE)
-        public static void loadList(User u, string fileName)
+        public static void loadList(User u)
         {
             //a temp linked list that will be used to override the users,(basically reseting the users Goals linked list)(JE)
             LinkedList<Goal> temp = new LinkedList<Goal>();
 
-            string folderpath = lpath + u.UserInformation["firstName"] + "Lists";
-            string finalpath = folderpath + "/" + fileName;
-            if (File.Exists(finalpath))
+            string filepath = lpath + u.UserInformation["firstName"] + "Lists" + ".txt";
+            string userpath = (@"../../Login/" + u.UserInformation["userName"] + ".txt");
+            try
             {
-                StreamReader reader = File.OpenText(finalpath);
-                List<Goal> objects;
-                objects = JsonConvert.DeserializeObject<List<Goal>>(reader.ReadLine());
-                reader.Close();
-
-                foreach (Goal l in objects)
+                if (File.Exists(filepath))
                 {
-                    Console.WriteLine(l.GoalName);
-                    temp.AddLast(l);
+                    StreamReader reader = File.OpenText(filepath);
+                    List<Goal> JsonArray;
+                    JsonArray = JsonConvert.DeserializeObject<List<Goal>>(reader.ReadLine());
+                    reader.Close();
 
+                    foreach (Goal l in JsonArray)
+                    {
+                        Console.WriteLine(l.GoalName);
+                        temp.AddLast(l);
+                    }
+                    //Loading user( for the total funds)(JE)
+                    u.Goals = temp;
+
+                    reader = File.OpenText(userpath);
+                    User JsonO;
+                    JsonO = JsonConvert.DeserializeObject<User>(reader.ReadLine());
+                    Console.WriteLine(JsonO.SpendingFunds);
+                    u = JsonO;
+                    reader.Close();
                 }
-                u.Goals = temp;
-
+                else
+                {
+                    //should always be working(JE)
+                    MessageBox.Show("No goals to load.");
+                }
             }
-            else
+            catch
             {
-                //should always be working(JE)
-                Console.WriteLine("FILE DOES NNOT EXISTST!!!");
+                MessageBox.Show("Error: File is empty.");
             }
-
-
         }
     }
 }
