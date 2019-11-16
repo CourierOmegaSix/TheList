@@ -38,11 +38,11 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.RemoveFunds_Button = new System.Windows.Forms.Button();
             this.AddFunds_Button = new System.Windows.Forms.Button();
-            this.SpendingFunds_Label = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SaveList_Button = new System.Windows.Forms.Button();
             this.LoadList_Button = new System.Windows.Forms.Button();
             this.PrintList_Button = new System.Windows.Forms.Button();
+            this.Spending = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -132,9 +132,9 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.Spending);
             this.groupBox5.Controls.Add(this.RemoveFunds_Button);
             this.groupBox5.Controls.Add(this.AddFunds_Button);
-            this.groupBox5.Controls.Add(this.SpendingFunds_Label);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Location = new System.Drawing.Point(344, 8);
             this.groupBox5.Name = "groupBox5";
@@ -161,18 +161,6 @@
             this.AddFunds_Button.Text = "Add Funds";
             this.AddFunds_Button.UseVisualStyleBackColor = true;
             this.AddFunds_Button.Click += new System.EventHandler(this.AddFunds_Button_Click);
-            // 
-            // SpendingFunds_Label
-            // 
-            this.SpendingFunds_Label.BackColor = System.Drawing.Color.White;
-            this.SpendingFunds_Label.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SpendingFunds_Label.Location = new System.Drawing.Point(0, 40);
-            this.SpendingFunds_Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.SpendingFunds_Label.Name = "SpendingFunds_Label";
-            this.SpendingFunds_Label.Size = new System.Drawing.Size(360, 88);
-            this.SpendingFunds_Label.TabIndex = 4;
-            this.SpendingFunds_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.SpendingFunds_Label.Click += new System.EventHandler(this.SpendingFunds_Label_Click_1);
             // 
             // label4
             // 
@@ -215,6 +203,20 @@
             this.PrintList_Button.UseVisualStyleBackColor = true;
             this.PrintList_Button.Click += new System.EventHandler(this.PrintList_Button_Click);
             // 
+            // Spending
+            // 
+            this.Spending.ColumnWidth = 11;
+            this.Spending.Font = new System.Drawing.Font("Georgia", 12F);
+            this.Spending.FormattingEnabled = true;
+            this.Spending.ItemHeight = 18;
+            this.Spending.Location = new System.Drawing.Point(0, 38);
+            this.Spending.MultiColumn = true;
+            this.Spending.Name = "Spending";
+            this.Spending.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.Spending.Size = new System.Drawing.Size(363, 94);
+            this.Spending.TabIndex = 6;
+            this.Spending.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // UserHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,12 +253,12 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button RemoveFunds_Button;
         private System.Windows.Forms.Button AddFunds_Button;
-        private System.Windows.Forms.Label SpendingFunds_Label;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button SaveList_Button;
         private System.Windows.Forms.Button LoadList_Button;
         private System.Windows.Forms.Button PrintList_Button;
         private System.Windows.Forms.ListBox Goal_ListBox;
         private System.Windows.Forms.ListBox Cost_ListBox;
+        private System.Windows.Forms.ListBox Spending;
     }
 }

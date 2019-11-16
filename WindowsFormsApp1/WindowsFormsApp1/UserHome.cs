@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             User = user;
-
+            Login.loadList(user);
             RefreshBox();
         }
 
@@ -125,6 +125,7 @@ namespace WindowsFormsApp1
                 }
             }
             RefreshBox();
+            //RefreshFunds();
         }
 
         private void SaveList_Button_Click(object sender, EventArgs e)
@@ -146,25 +147,55 @@ namespace WindowsFormsApp1
             //loops through the User.Goals linked array and adds each element to the list boxes(JE)
             Goal_ListBox.Items.Clear();
             Cost_ListBox.Items.Clear();
+            Spending.Items.Clear();
+            Spending.Refresh();
 
+            decimal goalAdded = 0;
+            foreach (Goal g in User.Goals)
+            {
+                goalAdded += g.EstimatedGoalCost;
+            }
+
+            Spending.Items.Add("Current budget: " + "$" + User.SpendingFunds.ToString());
+            Spending.Items.Add("Total of all your goals added: " + "$" + goalAdded.ToString());
+
+
+            decimal Total = (User.SpendingFunds - goalAdded);
+            if (Total > 0)
+            {
+                Spending.Items.Add("You are overbudget by: " + "$" + Total);
+            }
+            else
+            {
+                Spending.Items.Add("You are underbudget by: " + "$" + Total);
+            }
+            
+
+
+            sortList();
+
+
+            
+        }
+        private void sortList()
+        {
             // Sorting of the list (CK)
             List<Goal> temp = User.Goals.ToList();
             temp.Sort();
             User.Goals.Clear();
 
-            foreach(Goal g in temp)
+            foreach (Goal g in temp)
             {
                 User.Goals.AddLast(g);
             }
 
             int size = User.Goals.Count;
-            for (int i = 0; i < size; i++){
+            for (int i = 0; i < size; i++)
+            {
                 Goal_ListBox.Items.Add(User.Goals.ElementAt(i).GoalName);
                 Cost_ListBox.Items.Add("$" + User.Goals.ElementAt(i).EstimatedGoalCost.ToString("0.00"));
             }
-
-            SpendingFunds_Label.Text = "$" + User.SpendingFunds.ToString();
-            
+            //SpendingFunds_Label.Text = "$" + User.SpendingFunds.ToString();
         }
 
         private void SpendingFunds_Label_Click(object sender, EventArgs e)
@@ -200,6 +231,11 @@ namespace WindowsFormsApp1
         }
 
         private void SpendingFunds_Label_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

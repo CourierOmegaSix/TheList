@@ -94,7 +94,6 @@ namespace WindowsFormsApp1
         }
 
 
-        //file name is returned from loadList, which is the name of the txt file the user selected(JE)
         public static void loadList(User u)
         {
             //a temp linked list that will be used to override the users,(basically reseting the users Goals linked list)(JE)
@@ -113,7 +112,7 @@ namespace WindowsFormsApp1
 
                     foreach (Goal l in JsonArray)
                     {
-                        Console.WriteLine(l.GoalName);
+                        //Console.WriteLine(l.GoalName);
                         temp.AddLast(l);
                     }
                     //Loading user( for the total funds)(JE)
@@ -122,8 +121,8 @@ namespace WindowsFormsApp1
                     reader = File.OpenText(userpath);
                     User JsonO;
                     JsonO = JsonConvert.DeserializeObject<User>(reader.ReadLine());
-                    Console.WriteLine(JsonO.SpendingFunds);
-                    u = JsonO;
+                    //Console.WriteLine(JsonO.SpendingFunds);
+                    u.SpendingFunds = JsonO.SpendingFunds;
                     reader.Close();
                 }
                 else

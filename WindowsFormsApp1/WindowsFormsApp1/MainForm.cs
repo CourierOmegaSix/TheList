@@ -85,5 +85,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void pass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

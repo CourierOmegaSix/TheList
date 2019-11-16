@@ -1,1 +1,1 @@
-{"userInformation":{"userName":"jesse","firstName":"jesse","lastName":"E","address":"","zipCode":"","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":88.0}
+{"userInformation":{"userName":"jesse","firstName":"jesse","lastName":"E","address":"","zipCode":"","dateOfBirth":"10/5/2019 12:00:00 AM"},"goals":null,"spendingFunds":957.0}
