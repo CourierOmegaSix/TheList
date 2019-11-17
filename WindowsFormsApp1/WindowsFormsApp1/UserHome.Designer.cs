@@ -84,7 +84,6 @@
             this.Cost_ListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.Cost_ListBox.Size = new System.Drawing.Size(120, 381);
             this.Cost_ListBox.TabIndex = 4;
-            this.Cost_ListBox.SelectedIndexChanged += new System.EventHandler(this.Cost_ListBox_SelectedIndexChanged_1);
             // 
             // label2
             // 
@@ -106,7 +105,6 @@
             this.Goal_ListBox.Name = "Goal_ListBox";
             this.Goal_ListBox.Size = new System.Drawing.Size(200, 381);
             this.Goal_ListBox.TabIndex = 3;
-            this.Goal_ListBox.SelectedIndexChanged += new System.EventHandler(this.Goal_ListBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -215,7 +213,6 @@
             this.Spending.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.Spending.Size = new System.Drawing.Size(363, 94);
             this.Spending.TabIndex = 6;
-            this.Spending.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // UserHome
             // 
@@ -236,7 +233,6 @@
             this.Name = "UserHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.UserHome_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);

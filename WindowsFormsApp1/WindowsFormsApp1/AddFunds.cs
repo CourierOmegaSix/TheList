@@ -30,10 +30,5 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
-
-        private void AddFunds_UserInputTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

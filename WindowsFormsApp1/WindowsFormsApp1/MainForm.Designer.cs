@@ -77,7 +77,6 @@
             this.pass.Size = new System.Drawing.Size(113, 20);
             this.pass.TabIndex = 3;
             this.pass.UseSystemPasswordChar = true;
-            this.pass.TextChanged += new System.EventHandler(this.pass_TextChanged);
             // 
             // infoGroup
             // 
@@ -97,7 +96,6 @@
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
-            this.infoGroup.Enter += new System.EventHandler(this.infoGroup_Enter);
             // 
             // passwordLabel
             // 

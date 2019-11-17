@@ -112,7 +112,6 @@
             this.newUserInfoGroup.TabIndex = 3;
             this.newUserInfoGroup.TabStop = false;
             this.newUserInfoGroup.Text = "Create Profile";
-            this.newUserInfoGroup.Enter += new System.EventHandler(this.newUserInfoGroup_Enter);
             // 
             // addressBox
             // 

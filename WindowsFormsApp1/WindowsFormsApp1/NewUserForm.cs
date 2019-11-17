@@ -4,14 +4,11 @@ using Newtonsoft.Json;
 using System.Windows.Forms;
 using System.IO;
 
-namespace WindowsFormsApp1
-{
-    public partial class NewUserForm : Form
-    {
+namespace WindowsFormsApp1{
+    public partial class NewUserForm : Form{
         String userName;
         String password;
-        public NewUserForm(String n, String p)
-        {         
+        public NewUserForm(String n, String p){         
             InitializeComponent();
             usernameBox.Text = n;
             passwordBox.Text = p;
@@ -19,8 +16,7 @@ namespace WindowsFormsApp1
             password = p;           
         }
       
-        private void SubmitButton_Click(object sender, EventArgs e)
-        {
+        private void SubmitButton_Click(object sender, EventArgs e){
 
             String fName, lName, address, confirmPass, zipCode, userN;
             DateTime dob;
@@ -44,33 +40,23 @@ namespace WindowsFormsApp1
 
             string path = (@"../../Login/" + userName + ".txt");
             string temp = JsonConvert.SerializeObject(user);
-            using(StreamWriter streamWriter = new StreamWriter(path))
-            {
+            using(StreamWriter streamWriter = new StreamWriter(path)){
                 streamWriter.WriteLine(temp.ToString());
                 streamWriter.Close();
             }
-
             this.Hide();
             UserHome userHome = new UserHome(user);
             userHome.ShowDialog();
             this.Close();
-
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
-        {
+        private void ResetButton_Click(object sender, EventArgs e){
             fNameBox.Text = "";
             lNameBox.Text = "";
             addressBox.Text = "";
             confirmPassBox.Text = "";
             zipcodeBox.Text = "";
             dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
-
-        }
-
-        private void newUserInfoGroup_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -39,7 +39,6 @@
             this.AddFunds_UserInputTextbox.Name = "AddFunds_UserInputTextbox";
             this.AddFunds_UserInputTextbox.Size = new System.Drawing.Size(154, 20);
             this.AddFunds_UserInputTextbox.TabIndex = 0;
-            this.AddFunds_UserInputTextbox.TextChanged += new System.EventHandler(this.AddFunds_UserInputTextbox_TextChanged);
             // 
             // AddFunds_ConfirmButton
             // 

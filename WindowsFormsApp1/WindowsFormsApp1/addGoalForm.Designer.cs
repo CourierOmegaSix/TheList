@@ -92,7 +92,6 @@
             this.goalCostBox.Name = "goalCostBox";
             this.goalCostBox.Size = new System.Drawing.Size(182, 23);
             this.goalCostBox.TabIndex = 11;
-            this.goalCostBox.TextChanged += new System.EventHandler(this.goalCostBox_TextChanged);
             // 
             // label1
             // 
@@ -111,7 +110,6 @@
             this.goalNameBox.Name = "goalNameBox";
             this.goalNameBox.Size = new System.Drawing.Size(182, 23);
             this.goalNameBox.TabIndex = 9;
-            this.goalNameBox.TextChanged += new System.EventHandler(this.goalNameBox_TextChanged);
             // 
             // cancelButton
             // 

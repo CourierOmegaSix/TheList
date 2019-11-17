@@ -4,21 +4,17 @@ using System.Collections;
 using System.IO;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
-{
-    public partial class UserInfo : Form
-    {
+namespace WindowsFormsApp1{
+    public partial class UserInfo : Form{
         UserInfoVal infoVal;
         Login login;
         ArrayList names = new ArrayList();
 
-        public UserInfo()
-        {
+        public UserInfo(){
             InitializeComponent();          
         }
 
-        private void SignInButton_Click(object sender, EventArgs e)
-        {
+        private void SignInButton_Click(object sender, EventArgs e){
             String userName = usrName.Text;
             String passWord = pass.Text;
 
@@ -28,8 +24,7 @@ namespace WindowsFormsApp1
 
             Console.WriteLine(logincheck);
 
-            if (logincheck == true)
-            {
+            if (logincheck == true){
                 User user = JsonConvert.DeserializeObject<User>(File.ReadAllText(@"../../Login/" + userName + ".txt"));
                 MessageBox.Show("Profile found!\n" + "Logging in as: " + userName,"Sucess");
                 this.Hide();
@@ -40,26 +35,21 @@ namespace WindowsFormsApp1
                 this.Close();
                 homePage.Dispose();
             }
-            else if(userName == "" && passWord == "")
-            {
+            else if(userName == "" && passWord == ""){
                 MessageBox.Show("Please enter a UserName and PassWord.");
             }
-            else if(userName == "")
-            {
+            else if(userName == ""){
                 MessageBox.Show("Please enter the UserName.");
             }
-            else if(passWord == "")
-            {
+            else if(passWord == ""){
                 MessageBox.Show("Please enter the PassWord.");
             }
-            else
-            {
+            else{
                 MessageBox.Show("Profile not found.", "Error");
             }
         }
 
-        private void JoinButton_Click(object sender, EventArgs e)
-        {
+        private void JoinButton_Click(object sender, EventArgs e){
             String userName = usrName.Text;
             String passWord = pass.Text;
             bool userValid;
@@ -71,24 +61,13 @@ namespace WindowsFormsApp1
             passValid = infoVal.PassCheck();
 
             //If valid hide main form and create newUser form.
-            if(userValid && passValid)
-            {
+            if(userValid && passValid){
                 this.Hide();
                 NewUserForm userJoin = new NewUserForm(userName, passWord);
                 Login.recordLogin(infoVal);
                 userJoin.ShowDialog();
                 this.Close();
             }
-        }
-
-        private void infoGroup_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pass_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
