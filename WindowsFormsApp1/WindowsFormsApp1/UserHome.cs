@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
             writer.Close();
             fileStream.Close();
 
-            MessageBox.Show("Printed!");
+            MessageBox.Show("Printed to PDF!");
         }
 
         private void LoadList_Button_Click(object sender, EventArgs e)

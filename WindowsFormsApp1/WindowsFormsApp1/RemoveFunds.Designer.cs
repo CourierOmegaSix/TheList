@@ -35,16 +35,19 @@
             // 
             // RemoveFunds_UserInputTextbox
             // 
-            this.RemoveFunds_UserInputTextbox.Location = new System.Drawing.Point(12, 12);
+            this.RemoveFunds_UserInputTextbox.Location = new System.Drawing.Point(24, 22);
+            this.RemoveFunds_UserInputTextbox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.RemoveFunds_UserInputTextbox.Name = "RemoveFunds_UserInputTextbox";
-            this.RemoveFunds_UserInputTextbox.Size = new System.Drawing.Size(192, 20);
+            this.RemoveFunds_UserInputTextbox.Size = new System.Drawing.Size(380, 30);
             this.RemoveFunds_UserInputTextbox.TabIndex = 0;
             // 
             // RemoveFunds_ConfirmButton
             // 
-            this.RemoveFunds_ConfirmButton.Location = new System.Drawing.Point(12, 38);
+            this.RemoveFunds_ConfirmButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveFunds_ConfirmButton.Location = new System.Drawing.Point(24, 70);
+            this.RemoveFunds_ConfirmButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.RemoveFunds_ConfirmButton.Name = "RemoveFunds_ConfirmButton";
-            this.RemoveFunds_ConfirmButton.Size = new System.Drawing.Size(192, 23);
+            this.RemoveFunds_ConfirmButton.Size = new System.Drawing.Size(384, 42);
             this.RemoveFunds_ConfirmButton.TabIndex = 1;
             this.RemoveFunds_ConfirmButton.Text = "Confirm";
             this.RemoveFunds_ConfirmButton.UseVisualStyleBackColor = true;
@@ -52,9 +55,11 @@
             // 
             // RemoveFunds_CancelButton
             // 
-            this.RemoveFunds_CancelButton.Location = new System.Drawing.Point(12, 68);
+            this.RemoveFunds_CancelButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoveFunds_CancelButton.Location = new System.Drawing.Point(24, 126);
+            this.RemoveFunds_CancelButton.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.RemoveFunds_CancelButton.Name = "RemoveFunds_CancelButton";
-            this.RemoveFunds_CancelButton.Size = new System.Drawing.Size(192, 23);
+            this.RemoveFunds_CancelButton.Size = new System.Drawing.Size(384, 42);
             this.RemoveFunds_CancelButton.TabIndex = 2;
             this.RemoveFunds_CancelButton.Text = "Cancel";
             this.RemoveFunds_CancelButton.UseVisualStyleBackColor = true;
@@ -62,12 +67,18 @@
             // 
             // RemoveFunds
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(216, 106);
+            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.veryLightSpiralBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(432, 196);
             this.Controls.Add(this.RemoveFunds_CancelButton);
             this.Controls.Add(this.RemoveFunds_ConfirmButton);
             this.Controls.Add(this.RemoveFunds_UserInputTextbox);
+            this.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RemoveFunds";
             this.Text = "Remove Funds";
             this.ResumeLayout(false);
