@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
+using Newtonsoft.Json;
 
-namespace WindowsFormsApp1{
+namespace WindowsFormsApp1
+{
     public partial class NewUserForm : Form{
         String userName;
         String password;

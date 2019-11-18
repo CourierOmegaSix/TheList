@@ -119,7 +119,7 @@
             this.addressBox.Location = new System.Drawing.Point(598, 117);
             this.addressBox.Name = "addressBox";
             this.addressBox.Size = new System.Drawing.Size(166, 23);
-            this.addressBox.TabIndex = 19;
+            this.addressBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -148,7 +148,7 @@
             this.zipcodeBox.Location = new System.Drawing.Point(598, 182);
             this.zipcodeBox.Name = "zipcodeBox";
             this.zipcodeBox.Size = new System.Drawing.Size(166, 23);
-            this.zipcodeBox.TabIndex = 17;
+            this.zipcodeBox.TabIndex = 6;
             // 
             // submitButton
             // 
@@ -156,7 +156,7 @@
             this.submitButton.Location = new System.Drawing.Point(221, 377);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(100, 43);
-            this.submitButton.TabIndex = 6;
+            this.submitButton.TabIndex = 8;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.SubmitButton_Click);
@@ -180,7 +180,7 @@
             this.dobBox.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dobBox.Name = "dobBox";
             this.dobBox.Size = new System.Drawing.Size(140, 23);
-            this.dobBox.TabIndex = 12;
+            this.dobBox.TabIndex = 4;
             this.dobBox.Value = new System.DateTime(2019, 10, 5, 0, 0, 0, 0);
             // 
             // confirmPassBox
@@ -189,7 +189,7 @@
             this.confirmPassBox.Location = new System.Drawing.Point(598, 247);
             this.confirmPassBox.Name = "confirmPassBox";
             this.confirmPassBox.Size = new System.Drawing.Size(170, 23);
-            this.confirmPassBox.TabIndex = 11;
+            this.confirmPassBox.TabIndex = 7;
             this.confirmPassBox.UseSystemPasswordChar = true;
             // 
             // passwordBox
@@ -199,7 +199,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.ReadOnly = true;
             this.passwordBox.Size = new System.Drawing.Size(182, 23);
-            this.passwordBox.TabIndex = 10;
+            this.passwordBox.TabIndex = 3;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
             // usernameBox
@@ -209,7 +209,7 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.ReadOnly = true;
             this.usernameBox.Size = new System.Drawing.Size(182, 23);
-            this.usernameBox.TabIndex = 9;
+            this.usernameBox.TabIndex = 2;
             // 
             // lNameBox
             // 
@@ -217,7 +217,7 @@
             this.lNameBox.Location = new System.Drawing.Point(182, 117);
             this.lNameBox.Name = "lNameBox";
             this.lNameBox.Size = new System.Drawing.Size(182, 23);
-            this.lNameBox.TabIndex = 7;
+            this.lNameBox.TabIndex = 1;
             // 
             // fNameBox
             // 
@@ -225,7 +225,7 @@
             this.fNameBox.Location = new System.Drawing.Point(182, 52);
             this.fNameBox.Name = "fNameBox";
             this.fNameBox.Size = new System.Drawing.Size(182, 23);
-            this.fNameBox.TabIndex = 6;
+            this.fNameBox.TabIndex = 0;
             // 
             // confirmPassLabel
             // 
@@ -290,6 +290,7 @@
             this.Controls.Add(this.userInstructionLabel);
             this.Controls.Add(this.newUserInfoGroup);
             this.Font = new System.Drawing.Font("Georgia", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewUserForm";

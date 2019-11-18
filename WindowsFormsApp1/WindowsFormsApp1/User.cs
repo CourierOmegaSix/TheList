@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace WindowsFormsApp1{
+namespace WindowsFormsApp1
+{
 
     [DataContract]
     public class User{

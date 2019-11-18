@@ -1,14 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1{
-    public partial class UserInfo : Form{
+    public partial class UserInfo : Form
+    {
         UserInfoVal infoVal;
         Login login;
         ArrayList names = new ArrayList();
+        Boolean logincheck; // Moved here so I could add in a simple check to make sure an account doesn't already exist (CK)
 
         public UserInfo(){
             InitializeComponent();          
@@ -20,7 +22,7 @@ namespace WindowsFormsApp1{
 
             infoVal = new UserInfoVal(userName, passWord);
 
-            Boolean logincheck = Login.searchLogin(userName, passWord);
+            logincheck = Login.searchLogin(userName, passWord);
 
             Console.WriteLine(logincheck);
 
@@ -52,6 +54,7 @@ namespace WindowsFormsApp1{
         private void JoinButton_Click(object sender, EventArgs e){
             String userName = usrName.Text;
             String passWord = pass.Text;
+            logincheck = Login.searchLogin(userName, passWord);
             bool userValid;
             bool passValid;
 
@@ -61,12 +64,18 @@ namespace WindowsFormsApp1{
             passValid = infoVal.PassCheck();
 
             //If valid hide main form and create newUser form.
-            if(userValid && passValid){
+            // + Checks to insure no duplicate accounts are created.
+            if(userValid && passValid && logincheck != true){
                 this.Hide();
                 NewUserForm userJoin = new NewUserForm(userName, passWord);
                 Login.recordLogin(infoVal);
                 userJoin.ShowDialog();
                 this.Close();
+            }
+
+            else
+            {
+                MessageBox.Show("Error! Account already exists.");
             }
         }
     }

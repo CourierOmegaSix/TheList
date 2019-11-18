@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
-using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using Newtonsoft.Json;
 
-namespace WindowsFormsApp1{
+namespace WindowsFormsApp1
+{
     public partial class UserHome : Form{
 
         private User user;
