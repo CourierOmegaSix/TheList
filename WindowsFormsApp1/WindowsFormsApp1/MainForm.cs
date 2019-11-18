@@ -24,8 +24,6 @@ namespace WindowsFormsApp1{
 
             logincheck = Login.searchLogin(userName, passWord);
 
-            Console.WriteLine(logincheck);
-
             if (logincheck == true){
                 User user = JsonConvert.DeserializeObject<User>(File.ReadAllText(@"../../Login/" + userName + ".txt"));
                 MessageBox.Show("Profile found!\n" + "Logging in as: " + userName,"Sucess");
