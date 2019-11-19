@@ -17,15 +17,35 @@ namespace WindowsFormsApp1
 
         //method used to store username/password into Profiles.txt (JE)
         public static void recordLogin(UserInfoVal wrote){
-            //hashes the password (JE)
-            wrote.Password = wrote.Password.GetHashCode().ToString();
+            if (Directory.Exists(lpath))
+            {
+                //hashes the password (JE)
+                wrote.Password = wrote.Password.GetHashCode().ToString();
 
-            //Seriazlies the wrote object(UserInfoVal's UserName and Password) into a json string(JE)
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
+                //Seriazlies the wrote object(UserInfoVal's UserName and Password) into a json string(JE)
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
 
-            using (var tw = new StreamWriter(path, true)){
-                tw.WriteLine(json.ToString());
-                tw.Close();
+                using (var tw = new StreamWriter(path, true))
+                {
+                    tw.WriteLine(json.ToString());
+                    tw.Close();
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(lpath);
+
+                //hashes the password (JE)
+                wrote.Password = wrote.Password.GetHashCode().ToString();
+
+                //Seriazlies the wrote object(UserInfoVal's UserName and Password) into a json string(JE)
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(wrote);
+
+                using (var tw = new StreamWriter(path, true))
+                {
+                    tw.WriteLine(json.ToString());
+                    tw.Close();
+                }
             }
         }
 
@@ -34,18 +54,27 @@ namespace WindowsFormsApp1
             //Hashes password before doing calculations(JE)
             string p = password.GetHashCode().ToString();
 
+            try
+            {
+                string[] lines = File.ReadAllLines(path);
+                //moves through line by line seeing if there is a match between Profiles.txt and the username/password (JE)
+                foreach (string line in lines)
+                {
+                    //Deserialzes the line in the text file back into the UserInfoVal Object (JE)
+                    dynamic obj1 = Newtonsoft.Json.JsonConvert.DeserializeObject(line);
 
-            string[] lines = File.ReadAllLines(path);
-            //moves through line by line seeing if there is a match between Profiles.txt and the username/password (JE)
-            foreach (string line in lines){
-                //Deserialzes the line in the text file back into the UserInfoVal Object (JE)
-                dynamic obj1 = Newtonsoft.Json.JsonConvert.DeserializeObject(line);
-
-                if (obj1.UserName == username && obj1.Password == p){
-                    return true;
+                    if (obj1.UserName == username && obj1.Password == p)
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false ;
+            catch
+            {
+                //If Login folder does not exist(JE)
+                return false;
+            }
         }
 
         public static void saveList(User u){
@@ -54,31 +83,18 @@ namespace WindowsFormsApp1
 
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(u.Goals);
             string json2 = Newtonsoft.Json.JsonConvert.SerializeObject(u);
-            if (!File.Exists(filepath)){
-                var tw = new StreamWriter(filepath, false);
 
-                tw.WriteLine(json.ToString());
-                tw.Close();
+            var tw = new StreamWriter(filepath, false);
 
-                tw = new StreamWriter(userpath, false);
+            tw.WriteLine(json.ToString());
+            tw.Close();
 
-                tw.WriteLine(json2.ToString());
-                tw.Close();
+            tw = new StreamWriter(userpath, false);
 
-            }
-            else{
+            tw.WriteLine(json2.ToString());
+            tw.Close();
 
-                var tw = new StreamWriter(filepath, false);
-
-                tw.WriteLine(json.ToString());
-                tw.Close();
-
-                tw = new StreamWriter(userpath, false);
-
-                tw.WriteLine(json2.ToString());
-                tw.Close();
-                
-            }
+            
 
         }
         public static void loadList(User u){

@@ -36,13 +36,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AddGoal_Button = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Spending = new System.Windows.Forms.ListBox();
             this.RemoveFunds_Button = new System.Windows.Forms.Button();
             this.AddFunds_Button = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.SaveList_Button = new System.Windows.Forms.Button();
             this.LoadList_Button = new System.Windows.Forms.Button();
             this.PrintList_Button = new System.Windows.Forms.Button();
-            this.Spending = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +140,19 @@
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             // 
+            // Spending
+            // 
+            this.Spending.ColumnWidth = 11;
+            this.Spending.Font = new System.Drawing.Font("Georgia", 12F);
+            this.Spending.FormattingEnabled = true;
+            this.Spending.ItemHeight = 18;
+            this.Spending.Location = new System.Drawing.Point(0, 38);
+            this.Spending.MultiColumn = true;
+            this.Spending.Name = "Spending";
+            this.Spending.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.Spending.Size = new System.Drawing.Size(363, 94);
+            this.Spending.TabIndex = 6;
+            // 
             // RemoveFunds_Button
             // 
             this.RemoveFunds_Button.Location = new System.Drawing.Point(192, 144);
@@ -187,7 +200,7 @@
             this.LoadList_Button.Name = "LoadList_Button";
             this.LoadList_Button.Size = new System.Drawing.Size(360, 32);
             this.LoadList_Button.TabIndex = 7;
-            this.LoadList_Button.Text = "Load List";
+            this.LoadList_Button.Text = "Load Last Save";
             this.LoadList_Button.UseVisualStyleBackColor = true;
             this.LoadList_Button.Click += new System.EventHandler(this.LoadList_Button_Click);
             // 
@@ -200,19 +213,6 @@
             this.PrintList_Button.Text = "Print List";
             this.PrintList_Button.UseVisualStyleBackColor = true;
             this.PrintList_Button.Click += new System.EventHandler(this.PrintList_Button_Click);
-            // 
-            // Spending
-            // 
-            this.Spending.ColumnWidth = 11;
-            this.Spending.Font = new System.Drawing.Font("Georgia", 12F);
-            this.Spending.FormattingEnabled = true;
-            this.Spending.ItemHeight = 18;
-            this.Spending.Location = new System.Drawing.Point(0, 38);
-            this.Spending.MultiColumn = true;
-            this.Spending.Name = "Spending";
-            this.Spending.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.Spending.Size = new System.Drawing.Size(363, 94);
-            this.Spending.TabIndex = 6;
             // 
             // UserHome
             // 
@@ -233,6 +233,7 @@
             this.Name = "UserHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.UserHome_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);

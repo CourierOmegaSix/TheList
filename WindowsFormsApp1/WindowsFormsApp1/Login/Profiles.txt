@@ -1,7 +1,2 @@
-﻿{"UserName":"omega","Password":"-1694088835"}
-{"UserName":"kayla","Password":"-1694088835"}
-{"UserName":"omega","Password":"-1694088835"}
+{"UserName":"jesse","Password":"2066909603"}
 {"UserName":"jesse","Password":"-604520646"}
-{"UserName":"jesse","Password":"-604520646"}
-{"UserName":"jesse","Password":"-604520646"}
-{"UserName":"kayla","Password":"-1694088835"}

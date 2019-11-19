@@ -96,6 +96,7 @@
             this.infoGroup.TabIndex = 4;
             this.infoGroup.TabStop = false;
             this.infoGroup.Text = "Info";
+            this.infoGroup.Enter += new System.EventHandler(this.infoGroup_Enter);
             // 
             // passwordLabel
             // 

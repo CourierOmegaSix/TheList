@@ -1,1 +1,1 @@
-[{"GoalName":"test","EstimatedGoalCost":12.0,"OptionalGoalDescription":null},{"GoalName":"123","EstimatedGoalCost":123.0,"OptionalGoalDescription":null}]
+[{"GoalName":"dasdf","EstimatedGoalCost":21.0,"OptionalGoalDescription":null},{"GoalName":"goal 2","EstimatedGoalCost":200.0,"OptionalGoalDescription":null}]

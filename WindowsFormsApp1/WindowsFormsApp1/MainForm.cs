@@ -76,5 +76,10 @@ namespace WindowsFormsApp1{
                 MessageBox.Show("Error! Account already exists.");
             }
         }
+
+        private void infoGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

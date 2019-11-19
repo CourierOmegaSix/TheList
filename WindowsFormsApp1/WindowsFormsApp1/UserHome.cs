@@ -23,7 +23,9 @@ namespace WindowsFormsApp1
         public UserHome(User user){
             InitializeComponent();
             User = user;
-            Login.loadList(user);
+            if(File.Exists(@"../../Login/" + user.UserInformation["firstName"] + "Lists" + ".txt")){
+                Login.loadList(user);
+            }
             RefreshBox();
         }
 
@@ -71,23 +73,59 @@ namespace WindowsFormsApp1
 
             Document document = new Document(PageSize.A4, 25, 25, 30, 30);
             //Print button following exception
-            //System.IO.DirectoryNotFoundException: 'Could not find a part of the path 'C:\Users\Pinkfu\source\repos\TheList\WindowsFormsApp1\WindowsFormsApp1\Lists\Kayla.pdf'.'
-            FileStream fileStream = new FileStream(@"../../Lists/" + User.UserInformation["firstName"] + ".pdf", FileMode.Create);
+            string pdfPath = (@"../../Lists/");
+            if (Directory.Exists(pdfPath))
+            {
+                pdfPath = pdfPath + User.UserInformation["firstName"] + ".pdf";
 
-            PdfWriter writer = PdfWriter.GetInstance(document, fileStream);
-            document.Open();
+                FileStream fileStream = new FileStream(pdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
 
-            document.Add(new Paragraph("Optimized List - " + DateTime.Today));
+                
 
-            foreach(Goal g in toPrint){
-                document.Add(new Paragraph(g.ToString() + " [Amount Spent]: _______________"));
+                PdfWriter writer = PdfWriter.GetInstance(document, fileStream);
+                document.Open();
+
+
+                document.Add(new Paragraph("Optimized List - " + DateTime.Today));
+
+                foreach (Goal g in toPrint)
+                {
+                    document.Add(new Paragraph(g.ToString() + " [Amount Spent]: _______________"));
+                }
+
+                document.Close();
+                writer.Close();
+                fileStream.Close();
+
+                MessageBox.Show("Printed to PDF!");
             }
+            else
+            {
+                Directory.CreateDirectory(pdfPath);
 
-            document.Close();
-            writer.Close();
-            fileStream.Close();
+                pdfPath = pdfPath + User.UserInformation["firstName"] + ".pdf";
 
-            MessageBox.Show("Printed to PDF!");
+                FileStream fileStream = new FileStream(pdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
+
+
+
+                PdfWriter writer = PdfWriter.GetInstance(document, fileStream);
+                document.Open();
+
+
+                document.Add(new Paragraph("Optimized List - " + DateTime.Today));
+
+                foreach (Goal g in toPrint)
+                {
+                    document.Add(new Paragraph(g.ToString() + " [Amount Spent]: _______________"));
+                }
+
+                document.Close();
+                writer.Close();
+                fileStream.Close();
+
+                MessageBox.Show("Printed to PDF!");
+            }
         }
 
         private void LoadList_Button_Click(object sender, EventArgs e)
@@ -174,6 +212,11 @@ namespace WindowsFormsApp1
             RemoveFunds removeFunds = new RemoveFunds(User);
             removeFunds.ShowDialog();
             RefreshBox();
+        }
+
+        private void UserHome_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
